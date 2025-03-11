@@ -43,6 +43,8 @@ jobs:
 
       - name: Build for development
         run: npm run build:development
+        env:
+          VITE_AIRTABLE_ACCESS_TOKEN: ${{ secrets.VITE_AIRTABLE_ACCESS_TOKEN }}
         
       - name: Deploy to Dev s3, Set index headers
         env:
