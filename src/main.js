@@ -60,6 +60,7 @@ let $config = {
   gtag: {
     category: 'rf-wifi',
   },
+  agoTokenNeeded: true,
   allowZipcodeSearch: true,
   allowPrint: true,
   showBuffers: true,
