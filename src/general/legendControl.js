@@ -5,7 +5,7 @@ export default {
       shape: 'circle',
     },
     data: {
-      'PPR_REC': {
+      'PPR Recreation Centers': {
         'border-color': 'black',
         'border-style': 'solid',
         'border-weight': '0px',
@@ -14,16 +14,7 @@ export default {
         'font-size': '12px',
         'background-color': '#0F4D90',
       },
-      'OTHER': {
-        'border-color': 'black',
-        'border-style': 'solid',
-        'border-weight': '0px',
-        'width': '15px',
-        'height': '15px',
-        'font-size': '12px',
-        'background-color': '#506D0A',
-      },
-      'PPR_OPERATIONS': {
+      'PPR Operations': {
         'border-color': 'black',
         'border-style': 'solid',
         'border-weight': '0px',
@@ -32,7 +23,7 @@ export default {
         'font-size': '12px',
         'background-color': '#a86518',
       },
-      'ENVIRONMENTAL_EDUCATION_CENTER': {
+      'Environmental Educations Centers': {
         'border-color': 'black',
         'border-style': 'solid',
         'border-weight': '0px',
@@ -41,7 +32,7 @@ export default {
         'font-size': '12px',
         'background-color': '#721817',
       },
-      'OLDER_ADULT_CENTERS': {
+      'Older Adult Centers': {
         'border-color': 'black',
         'border-style': 'solid',
         'border-weight': '0px',
@@ -49,6 +40,33 @@ export default {
         'height': '15px',
         'font-size': '12px',
         'background-color': '#444444',
+      },
+      'Museums': {
+        'border-color': 'black',
+        'border-style': 'solid',
+        'border-weight': '0px',
+        'width': '15px',
+        'height': '15px',
+        'font-size': '12px',
+        'background-color': '#B569C3',
+      },
+      'Libraries': {
+        'border-color': 'black',
+        'border-style': 'solid',
+        'border-weight': '0px',
+        'width': '15px',
+        'height': '15px',
+        'font-size': '12px',
+        'background-color': '#506D0A',
+      },
+      'Other': {
+        'border-color': 'black',
+        'border-style': 'solid',
+        'border-weight': '0px',
+        'width': '15px',
+        'height': '15px',
+        'font-size': '12px',
+        'background-color': '#FEEE5E',
       },
     },
   },

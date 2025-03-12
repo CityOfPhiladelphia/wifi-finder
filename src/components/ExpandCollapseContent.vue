@@ -611,6 +611,8 @@ const subwayValueWithComma = (option, index) => {
       </div>
     </div>
 
+    {{ item.properties.PROGRAM_TYPE }}
+
     <!-- <div v-if="item.properties.operator">
       <h3 class="section-heading">
         {{ $t('operator') }}

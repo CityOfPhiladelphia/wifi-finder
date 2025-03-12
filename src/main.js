@@ -141,22 +141,30 @@ let $config = {
       title: 'PPR Recreation Centers',
       color: '#0F4D90',
     },
-    OTHER:{
-      title: 'Other PPR Locations',
-      color: '#506D0A',
-    },
     PPR_OPERATIONS:{
       title: 'PPR Operations',
       color: '#721817',
     },
     ENVIRONMENTAL_EDUCATION_CENTER:{
-      title: 'PPR Education Centers',
+      title: 'Environmental Education Centers',
       color: '#a86518',
     },
     OLDER_ADULT_CENTERS: {
       title: 'Older Adult Centers',
       color: '#444444',
-    }
+    },
+    MUSEUM:{
+      title: 'Museums',
+      color: '#B569C3',
+    },
+    LIBRARY:{
+      title: 'Libraries',
+      color: '#506D0A',
+    },
+    OTHER:{
+      title: 'Other PPR Locations',
+      color: '#FEEE5E',
+    },
   },
   projection: '3857',
   geocoder: {
@@ -180,14 +188,18 @@ let $config = {
         ['get', 'PROGRAM_TYPE'],
         'PPR_REC',
         '#0F4D90',
-        'OTHER',
-        '#a86518',
         'PPR_OPERATIONS',
         '#721817',
         'ENVIRONMENTAL_EDUCATION_CENTER',
         '#506D0A',
         'OLDER_ADULT_CENTERS',
         '#444444',
+        'MUSEUM',
+        '#B569C3',
+        'LIBRARY',
+        '#a86518',
+        'OTHER',
+        '#FEEE5E',
         /* other */ '#000000'
       ],
       'circle-stroke-width': 1,
