@@ -185,11 +185,11 @@ let $config = {
       },
       computerServices: {
         checkbox: {
-          'generalAfterschoolCamp': {
-            unique_key: 'computerServices_generalAfterschoolCamp',
-            i18n_key: 'computerServices.generalAfterschoolCamp',
+          'computersPublicAccess': {
+            unique_key: 'computerServices_computersPublicAccess',
+            i18n_key: 'computerServices.computersPublicAccess',
             value: function(item) {
-              return item.properties.GENERAL_AFTERSCHOOL_CAMP === 'Y';
+              return item.properties.COMPUTERS_PUBLIC_ACCESS_Y_N === 'Y';
             },
           },
           'computersAfterschoolCamp': {
@@ -218,6 +218,13 @@ let $config = {
       },
       otherServices: {
         checkbox: {
+          'generalAfterschoolCamp': {
+            unique_key: 'otherServices_generalAfterschoolCamp',
+            i18n_key: 'otherServices.generalAfterschoolCamp',
+            value: function(item) {
+              return item.properties.GENERAL_AFTERSCHOOL_CAMP === 'Y';
+            },
+          },
           'gym': {
             unique_key: 'otherServices_gym',
             i18n_key: 'otherServices.gym',
@@ -308,13 +315,13 @@ let $config = {
         'PPR_OPERATIONS',
         '#721817',
         'ENVIRONMENTAL_EDUCATION_CENTER',
-        '#506D0A',
+        '#a86518',
         'OLDER_ADULT_CENTER',
         '#444444',
         'MUSEUM',
         '#B569C3',
         'LIBRARY',
-        '#a86518',
+        '#506D0A',
         'OTHER',
         '#BAAC2C',
         /* other */ '#000000'

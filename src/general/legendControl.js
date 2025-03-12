@@ -21,7 +21,7 @@ export default {
         'width': '15px',
         'height': '15px',
         'font-size': '12px',
-        'background-color': '#a86518',
+        'background-color': '#721817',
       },
       'Environmental Educations Centers': {
         'border-color': 'black',
@@ -30,7 +30,7 @@ export default {
         'width': '15px',
         'height': '15px',
         'font-size': '12px',
-        'background-color': '#721817',
+        'background-color': '#a86518',
       },
       'Older Adult Centers': {
         'border-color': 'black',

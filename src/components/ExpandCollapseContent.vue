@@ -452,8 +452,8 @@ const computerServices = computed(() => {
   let rows = [];
   rows.push({
     id: 1,
-    service: 'computerServices.generalAfterschoolCamp',
-    value: props.item.properties.GENERAL_AFTERSCHOOL_CAMP === 'Y',
+    service: 'computerServices.computersPublicAccess',
+    value: props.item.properties.COMPUTERS_PUBLIC_ACCESS_Y_N === 'Y',
   });
   rows.push({
     id: 1,
@@ -491,6 +491,11 @@ const otherServices = computed(() => {
     },
   ];
   let rows = [];
+  rows.push({
+    id: 1,
+    service: 'otherServices.generalAfterschoolCamp',
+    value: props.item.properties.GENERAL_AFTERSCHOOL_CAMP === 'Y',
+  });
   rows.push({
     id: 1,
     service: 'otherServices.gym',
@@ -641,55 +646,8 @@ const otherServices = computed(() => {
         </div>
 
         <div class="columns is-mobile">
-          <!-- <div
-            class="column is-1"
-          >
-            <font-awesome-icon icon="car-bus" />
-          </div>
-          <div class="column">
-            <div v-if="item.properties.transit_bus">
-              <b>{{ $t('transit.bus') + ': ' }}</b>
-              {{ item.properties.transit_bus }}
-            </div>
-            <div v-if="item.properties.transit_subway && Array.isArray(item.properties.transit_subway)">
-              <b>{{ $t('transit.subway.label') + ': ' }}</b>
-              <span
-                v-for="(option, index) of item.properties.transit_subway"
-                v-if="item.properties.transit_subway && Array.isArray(item.properties.transit_subway)"
-                :key="index"
-              >
-                {{ subwayValueWithComma(option, index) }}
-              </span>
-            </div>
-            <div v-if="item.properties.transit_regional_rail">
-              <b>{{ $t('transit.regRail.label') + ': ' }}</b>
-              <span
-                v-for="(option, index) of item.properties.transit_regional_rail.split(',')"
-                :key="index"
-              >
-                {{ trainValueWithComma(option, index) }}
-              </span>
-            </div>
-            <div v-if="item.properties.transit_trolley">
-              <b>{{ $t('transit.trolley') + ': ' }}</b>
-              {{ item.properties.transit_trolley }}
-            </div>
-            <div v-if="parking">
-              <b>{{ $t('transit.car.label') + ': ' }}</b>
-              <span
-                v-for="(option, index) of parking"
-                :key="index"
-              >
-                {{ parkingValueWithComma(option, index) }}
-              </span>
-            </div>
-            <div v-if="!item.properties.transit_parking && !item.properties.transit_trolley && !item.properties.transit_regional_rail && !item.properties.transit_subway && !item.properties.transit_bus">
-              <span>
-                {{ $t('noInfo') }}
-              </span>
-            </div>
-          </div> -->
         </div>
+
       </div>
     </div>
 

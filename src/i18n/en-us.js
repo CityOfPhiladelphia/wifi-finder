@@ -117,13 +117,14 @@ export default {
   },
   computerServices: {
     category: 'Computer Services',
-    generalAfterschoolCamp: 'General Afterschool Camp',
+    computersPublicAccess: 'Computers - Public Access',
     computersAfterschoolCamp: 'Computer Afterschool Camp',
     additionalComputerClasses: 'Additional Computer Classes',
     esports: 'Esports Machines',
   },
   otherServices: {
     category: 'Other Services',
+    generalAfterschoolCamp: 'General Afterschool Camp',
     gym: 'Gym',
   },
   yesNo: 'Available?',
