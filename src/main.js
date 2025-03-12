@@ -64,7 +64,7 @@ let $config = {
   allowPrint: true,
   showBuffers: true,
   resetDataOnGeocode: true,
-  retractableRefine: true,
+  retractableRefine: false,
   dropdownRefine: false,
   searchBar: {
     searchTypes: [

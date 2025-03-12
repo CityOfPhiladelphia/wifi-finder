@@ -2,6 +2,9 @@
 
 import $config from '../main.js';
 
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
+
 const props = defineProps({
   database: {
     type: Array,
@@ -118,13 +121,13 @@ const allTwitter = computed(() => {
         />
       </div>
 
-      <h3>
+      <!-- <h3>
         {{ $t('introPage.section2Title') }}
-      </h3>
+      </h3> -->
 
-      <p v-html="$t('introPage.p2')" />
+      <!-- <p v-html="$t('introPage.p2')" /> -->
 
-      <div class="intro-list">
+      <!-- <div class="intro-list">
         <ul>
           <li
             v-for="(item, index) in $config.i18n.data.messages['en-US'].introPage.ul1"
@@ -133,9 +136,9 @@ const allTwitter = computed(() => {
             v-html="$t('introPage.ul1.' + index)"
           />
         </ul>
-      </div>
+      </div> -->
 
-      <h3>
+      <!-- <h3>
         {{ $t('introPage.section3Title') }}
       </h3>
 
@@ -160,19 +163,33 @@ const allTwitter = computed(() => {
             </ul>
           </div>
         </ul>
+      </div> -->
+      <div class="half-data-section">
+        <p v-html="t('introPage.p1')" />
+      </div>
+
+      <div class="half-data-section">
+        <ul class="bullet-list">
+          <li
+            v-for="(item, index) in $config.i18n.data.messages['en-US'].introPage.ul1"
+            :key="index"
+          >
+            {{ t('introPage.ul1.' + index) }}
+          </li>
+        </ul>
       </div>
 
       <h3>
-        {{ $t('introPage.section4Title') }}
+        {{ $t('introPage.section2Title') }}
       </h3>
 
       <div class="intro-list">
         <ul>
           <li
-            v-for="(item, index) in $config.i18n.data.messages['en-US'].introPage.ul4"
+            v-for="(item, index) in $config.i18n.data.messages['en-US'].introPage.ul2"
             :key="index"
             class="intro-list-item"
-            v-html="$t('introPage.ul4.' + index)"
+            v-html="$t('introPage.ul2.' + index)"
           />
         </ul>
       </div>
