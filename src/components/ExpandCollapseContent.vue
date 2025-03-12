@@ -432,6 +432,88 @@ const subwayValueWithComma = (option, index) => {
   return t(`transit.subway.${option.trim()}`);
 };
 
+const computerServices = computed(() => {
+  let columns = [
+    {
+      label: 'Service',
+      i18nLabel: 'service',
+      field: 'service',
+      thClass: 'th-black-class',
+      tdClass: 'table-text',
+    },
+    {
+      label: 'yesNo',
+      i18nLabel: 'yesNo',
+      field: 'yesNo',
+      thClass: 'th-black-class',
+      tdClass: 'table-text',
+    },
+  ];
+  let rows = [];
+  rows.push({
+    id: 1,
+    service: 'computerServices.generalAfterschoolCamp',
+    value: props.item.properties.GENERAL_AFTERSCHOOL_CAMP === 'Y',
+  });
+  rows.push({
+    id: 1,
+    service: 'computerServices.computersAfterschoolCamp',
+    value: props.item.properties.COMPUTERS_AFTERSCHOOL_CAMP_Y_N === 'Y',
+  });
+  rows.push({
+    id: 1,
+    service: 'computerServices.additionalComputerClasses',
+    value: props.item.properties.ADDITIONAL_COMPUTER_CLASSES_Y_N === 'Y',
+  });
+  rows.push({
+    id: 1,
+    service: 'computerServices.esports',
+    value: props.item.properties.ESPORTS === 'Y',
+  });
+  return { columns, rows };
+});
+
+const otherServices = computed(() => {
+  let columns = [
+    {
+      label: 'Service',
+      i18nLabel: 'service',
+      field: 'service',
+      thClass: 'th-black-class',
+      tdClass: 'table-text',
+    },
+    {
+      label: 'yesNo',
+      i18nLabel: 'yesNo',
+      field: 'yesNo',
+      thClass: 'th-black-class',
+      tdClass: 'table-text',
+    },
+  ];
+  let rows = [];
+  rows.push({
+    id: 1,
+    service: 'otherServices.gym',
+    value: props.item.properties.GYM === 'Y',
+  });
+  // rows.push({
+  //   id: 1,
+  //   service: 'computerServices.computersAfterschoolCamp',
+  //   value: props.item.properties.COMPUTERS_AFTERSCHOOL_CAMP_Y_N === 'Y',
+  // });
+  // rows.push({
+  //   id: 1,
+  //   service: 'computerServices.additionalComputerClasses',
+  //   value: props.item.properties.ADDITIONAL_COMPUTER_CLASSES_Y_N === 'Y',
+  // });
+  // rows.push({
+  //   id: 1,
+  //   service: 'computerServices.esports',
+  //   value: props.item.properties.ESPORTS === 'Y',
+  // });
+  return { columns, rows };
+});
+
 </script>
 
 <template>
@@ -611,113 +693,117 @@ const subwayValueWithComma = (option, index) => {
       </div>
     </div>
 
-    {{ item.properties.PROGRAM_TYPE }}
+    <h3>{{ $t('computerServices.category') }}</h3>
 
-    <!-- <div v-if="item.properties.operator">
-      <h3 class="section-heading">
-        {{ $t('operator') }}
-      </h3>
-      <div>{{ item.properties.operator }}</div>
-    </div> -->
-
-    <!-- <h3 class="section-heading">
-      {{ $t('hours') }}
-    </h3> -->
-    <!-- <vue-good-table
-      :columns="days.columns"
-      :rows="days.rows"
-      :sort-options="{ enabled: false }"
-      style-class="table"
-    >
-      <template #table-column="props">
-        <span
-          v-if="props.column.label =='Days'"
-          class="table-header-text"
-        >
-          {{ $t(props.column.i18nLabel) }}
-        </span>
-        <span
-          v-if="props.column.label =='Schedule'"
-          class="table-header-text"
-        >
-          {{ $t(props.column.i18nLabel) }}
-        </span>
-      </template>
-
-      <template #table-row="props">
-        <span
-          v-if="props.column.field == 'label'"
-          class="table-text"
-        >
-          {{ $t(props.row.days) }}
-        </span>
-        <div
-          v-if="props.column.field == 'value'"
-          class="table-text"
-        >
-          {{ props.row.schedule }}
-        </div>
-      </template>
-    </vue-good-table> -->
-
-    <!-- <div class="exceptions-holder">
-      <div
-        v-for="(exception, index) of exceptionsList"
-        :key="index"
-      >
-        {{ parseException(exception, index+1) }}
+    <div class="table-intro">
+      <div class="table-intro">
+        {{ $t('cards.table1Intro') }}
       </div>
-    </div> -->
+    </div>
 
-    <!-- <h3 class="section-heading">
-      {{ $t('paymentOptions') }}
-    </h3> -->
+    <vue-good-table
+        :columns="computerServices.columns"
+        :rows="computerServices.rows"
+        :sort-options="{ enabled: false }"
+        style-class="table"
+      >
+        <template #table-column="props">
+          <span
+            v-if="props.column.label =='Service'"
+            class="table-header-text"
+          >
+            {{ $t(props.column.i18nLabel) }}
+          </span>
+          <div
+            v-if="props.column.label =='yesNo'"
+            class="center table-header-text"
+          >
+            {{ $t(props.column.i18nLabel) }}
+          </div>
+        </template>
 
-    <!-- <vue-good-table
-      :columns="paymentOptions.columns"
-      :rows="paymentOptions.rows"
-      :sort-options="{ enabled: false }"
-      style-class="table"
-    >
-      <template #table-column="props">
-        <span
-          v-if="props.column.label =='Service'"
-          class="table-header-text"
-        >
-          {{ $t(props.column.i18nLabel) }}
-        </span>
-        <div
-          v-if="props.column.label =='Accepted'"
-          class="center table-header-text"
-        >
-          {{ $t(props.column.i18nLabel) }}
-        </div>
-      </template>
-
-      <template #table-row="props">
+        <template #table-row="props">
         <span
           v-if="props.column.field == 'service'"
           class="table-text"
         >
           {{ $t(props.row.service) }}
         </span>
+
         <div
-          v-if="props.column.field == 'value'"
+          v-if="props.column.field == 'yesNo'"
           class="center"
         >
           <font-awesome-icon
-            v-if="props.row.value == 'Yes'"
+            v-if="props.row.value == true"
             :icon="['far', 'check']"
           />
         </div>
       </template>
-    </vue-good-table> -->
 
-    <!-- <div
-      v-if="item.properties.payment_low_cost == 'Yes'"
-      class="pt-4"
-    >
-      {{ t(payment.lowCost) }}: {{ t(otherLowCost[item.properties.payment_other_low_cost]) }}
-    </div> -->
+      <template #emptystate>
+        <div>
+          {{ $t('tableNoData.noServices') }}
+        </div>
+      </template>
+
+    </vue-good-table>
+
+    <h3>{{ $t('otherServices.category') }}</h3>
+
+    <div class="table-intro">
+      <div class="table-intro">
+        {{ $t('cards.table2Intro') }}
+      </div>
+    </div>
+
+    <vue-good-table
+        :columns="otherServices.columns"
+        :rows="otherServices.rows"
+        :sort-options="{ enabled: false }"
+        style-class="table"
+      >
+        <template #table-column="props">
+          <span
+            v-if="props.column.label =='Service'"
+            class="table-header-text"
+          >
+            {{ $t(props.column.i18nLabel) }}
+          </span>
+          <div
+            v-if="props.column.label =='yesNo'"
+            class="center table-header-text"
+          >
+            {{ $t(props.column.i18nLabel) }}
+          </div>
+        </template>
+
+        <template #table-row="props">
+        <span
+          v-if="props.column.field == 'service'"
+          class="table-text"
+        >
+          {{ $t(props.row.service) }}
+        </span>
+
+        <div
+          v-if="props.column.field == 'yesNo'"
+          class="center"
+        >
+          <font-awesome-icon
+            v-if="props.row.value == true"
+            :icon="['far', 'check']"
+          />
+        </div>
+      </template>
+
+      <template #emptystate>
+        <div>
+          {{ $t('tableNoData.noServices') }}
+        </div>
+      </template>
+
+    </vue-good-table>
+
   </div>
 </template>

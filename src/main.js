@@ -182,10 +182,52 @@ let $config = {
           },
         },
         columns: 2,
-      }
-      // 'Computers to Display': function(item) { return item.properties.AVAILABLE_COMPUTERS_TO_DISPLAY_Y_N === 'Y'; },
-      // 'Computers for Afterschool Camp': function(item) { return item.properties.COMPUTERS_AFTERSCHOOL_CAMP_Y_N === 'Y'; },
-      // 'Computers for Public Access': function(item) { return item.properties.COMPUTERS_PUBLIC_ACCESS_Y_N === 'Y'; },
+      },
+      computerServices: {
+        checkbox: {
+          'generalAfterschoolCamp': {
+            unique_key: 'computerServices_generalAfterschoolCamp',
+            i18n_key: 'computerServices.generalAfterschoolCamp',
+            value: function(item) {
+              return item.properties.GENERAL_AFTERSCHOOL_CAMP === 'Y';
+            },
+          },
+          'computersAfterschoolCamp': {
+            unique_key: 'computerServices_computersAfterschoolCamp',
+            i18n_key: 'computerServices.computersAfterschoolCamp',
+            value: function(item) {
+              return item.properties.COMPUTERS_AFTERSCHOOL_CAMP_Y_N === 'Y';
+            },
+          },
+          'additionalComputerClasses': {
+            unique_key: 'computerServices_additionalComputerClasses',
+            i18n_key: 'computerServices.additionalComputerClasses',
+            value: function(item) {
+              return item.properties.ADDITIONAL_COMPUTER_CLASSES_Y_N === 'Y';
+            },
+          },
+          'esports': {
+            unique_key: 'computerServices_esports',
+            i18n_key: 'computerServices.esports',
+            value: function(item) {
+              return item.properties.ESPORTS === 'Y';
+            },
+          },
+        },
+        columns: 2,
+      },
+      otherServices: {
+        checkbox: {
+          'gym': {
+            unique_key: 'otherServices_gym',
+            i18n_key: 'otherServices.gym',
+            value: function(item) {
+              return item.properties.GYM === 'Y';
+            },
+          },
+        },
+        columns: 1,
+      },
     },
   },
   legendControl,
