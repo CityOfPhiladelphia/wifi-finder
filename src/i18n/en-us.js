@@ -105,4 +105,15 @@ export default {
     },
   },
   oldInfoMessage: "The details for this market were provided in 2023. Some of this information may have changed — check with the market before you go.",
+  categoryType: {
+    category: 'Category',
+    'PPR Recreation Center': 'PPR Recreation Center',
+    'PPR Operation': 'PPR Operation',
+    'Environmental Education Center': 'Environmental Education Center',
+    'Older Adult Center': 'Older Adult Center',
+    'Museum': 'Museum',
+    'Library': 'Library',
+    'Other PPR Location': 'Other PPR Location',
+
+  },
 };

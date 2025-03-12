@@ -62,6 +62,9 @@ let $config = {
   gtag: {
     category: 'rf-wifi',
   },
+  fieldsUsed: {
+    section: 'PROGRAM_TYPE',
+  },
   agoTokenNeeded: true,
   allowZipcodeSearch: true,
   allowPrint: true,
@@ -139,31 +142,38 @@ let $config = {
   sections: {
     PPR_REC:{
       title: 'PPR Recreation Centers',
+      titleSingular: 'PPR Recreation Center',
       color: '#0F4D90',
     },
     PPR_OPERATIONS:{
       title: 'PPR Operations',
+      titleSingular: 'PPR Operation',
       color: '#721817',
     },
     ENVIRONMENTAL_EDUCATION_CENTER:{
       title: 'Environmental Education Centers',
+      titleSingular: 'Environmental Education Center',
       color: '#a86518',
     },
-    OLDER_ADULT_CENTERS: {
+    OLDER_ADULT_CENTER: {
       title: 'Older Adult Centers',
+      titleSingular: 'Older Adult Center',
       color: '#444444',
     },
     MUSEUM:{
       title: 'Museums',
+      titleSingular: 'Museum',
       color: '#B569C3',
     },
     LIBRARY:{
       title: 'Libraries',
+      titleSingular: 'Library',
       color: '#506D0A',
     },
     OTHER:{
       title: 'Other PPR Locations',
-      color: '#FEEE5E',
+      titleSingular: 'Other PPR Location',
+      color: '#BAAC2C',
     },
   },
   projection: '3857',
@@ -192,14 +202,14 @@ let $config = {
         '#721817',
         'ENVIRONMENTAL_EDUCATION_CENTER',
         '#506D0A',
-        'OLDER_ADULT_CENTERS',
+        'OLDER_ADULT_CENTER',
         '#444444',
         'MUSEUM',
         '#B569C3',
         'LIBRARY',
         '#a86518',
         'OTHER',
-        '#FEEE5E',
+        '#BAAC2C',
         /* other */ '#000000'
       ],
       'circle-stroke-width': 1,
