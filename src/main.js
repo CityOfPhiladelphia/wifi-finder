@@ -39,6 +39,8 @@ const customComps = markRaw({
   'customGreeting': customGreeting,
 });
 
+import legendControl from './general/legendControl';
+
 
 import i18n from './i18n/i18n';
 console.log('main.js i18n:', i18n);
@@ -122,16 +124,39 @@ let $config = {
     type: 'multipleFields',
     // columns: true,
     multipleFields: {
-      'Computers to Display': function(item) { return item.properties.AVAILABLE_COMPUTERS_TO_DISPLAY_Y_N === true; },
-      'Computers for Afterschool Camp': function(item) { return item.properties.COMPUTERS_AFTERSCHOOL_CAMP_Y_N === true; },
-      'Computers for Public Access': function(item) { return item.properties.COMPUTERS_PUBLIC_ACCESS_Y_N === true; },
+      'Computers to Display': function(item) { return item.properties.AVAILABLE_COMPUTERS_TO_DISPLAY_Y_N === 'Y'; },
+      // 'Computers for Afterschool Camp': function(item) { return item.properties.COMPUTERS_AFTERSCHOOL_CAMP_Y_N === 'Y'; },
+      'Computers for Public Access': function(item) { return item.properties.COMPUTERS_PUBLIC_ACCESS_Y_N === 'Y'; },
     },
   },
+  legendControl,
   dataSources: {
     wifi,
   },
   router: {
     enabled: false,
+  },
+  sections: {
+    PPR_REC:{
+      title: 'PPR Recreation Centers',
+      color: '#0F4D90',
+    },
+    OTHER:{
+      title: 'Other PPR Locations',
+      color: '#506D0A',
+    },
+    PPR_OPERATIONS:{
+      title: 'PPR Operations',
+      color: '#721817',
+    },
+    ENVIRONMENTAL_EDUCATION_CENTER:{
+      title: 'PPR Education Centers',
+      color: '#a86518',
+    },
+    OLDER_ADULT_CENTERS: {
+      title: 'Older Adult Centers',
+      color: '#444444',
+    }
   },
   projection: '3857',
   geocoder: {
@@ -150,11 +175,36 @@ let $config = {
     type: 'circle',
     paint: {
       'circle-radius': 7,
-      'circle-color': '#2176d2',
+      'circle-color': [
+        'match',
+        ['get', 'PROGRAM_TYPE'],
+        'PPR_REC',
+        '#0F4D90',
+        'OTHER',
+        '#a86518',
+        'PPR_OPERATIONS',
+        '#721817',
+        'ENVIRONMENTAL_EDUCATION_CENTER',
+        '#506D0A',
+        'OLDER_ADULT_CENTERS',
+        '#444444',
+        /* other */ '#000000'
+      ],
       'circle-stroke-width': 1,
       'circle-stroke-color': 'white',
     },
   },
+  // mapLayer: {
+  //   id: 'resources',
+  //   source: 'resources',
+  //   type: 'circle',
+  //   paint: {
+  //     'circle-radius': 7,
+  //     'circle-color': '#2176d2',
+  //     'circle-stroke-width': 1,
+  //     'circle-stroke-color': 'white',
+  //   },
+  // },
   footer: [
     {
       type: "native",

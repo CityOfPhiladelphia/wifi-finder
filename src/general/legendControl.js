@@ -1,0 +1,55 @@
+export default {
+  legend: {
+    options: {
+      showWithBaseMapOnly: true,
+      shape: 'circle',
+    },
+    data: {
+      'PPR_REC': {
+        'border-color': 'black',
+        'border-style': 'solid',
+        'border-weight': '0px',
+        'width': '15px',
+        'height': '15px',
+        'font-size': '12px',
+        'background-color': '#0F4D90',
+      },
+      'OTHER': {
+        'border-color': 'black',
+        'border-style': 'solid',
+        'border-weight': '0px',
+        'width': '15px',
+        'height': '15px',
+        'font-size': '12px',
+        'background-color': '#506D0A',
+      },
+      'PPR_OPERATIONS': {
+        'border-color': 'black',
+        'border-style': 'solid',
+        'border-weight': '0px',
+        'width': '15px',
+        'height': '15px',
+        'font-size': '12px',
+        'background-color': '#a86518',
+      },
+      'ENVIRONMENTAL_EDUCATION_CENTER': {
+        'border-color': 'black',
+        'border-style': 'solid',
+        'border-weight': '0px',
+        'width': '15px',
+        'height': '15px',
+        'font-size': '12px',
+        'background-color': '#721817',
+      },
+      'OLDER_ADULT_CENTERS': {
+        'border-color': 'black',
+        'border-style': 'solid',
+        'border-weight': '0px',
+        'width': '15px',
+        'height': '15px',
+        'font-size': '12px',
+        'background-color': '#444444',
+      },
+    },
+  },
+};
