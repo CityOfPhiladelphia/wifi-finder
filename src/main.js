@@ -138,9 +138,9 @@ let $config = {
               return item.properties.PROGRAM_TYPE === 'PPR_REC';
             },
           },
-          'PPROPERATION': {
-            unique_key: 'categoryType_PPROPERATION',
-            i18n_key: 'categoryType.PPROPERATION',
+          'PPROPERATIONS': {
+            unique_key: 'categoryType_PPROPERATIONS',
+            i18n_key: 'categoryType.PPROPERATIONS',
             value: function(item) {
               return item.properties.PROGRAM_TYPE === 'PPR_OPERATIONS';
             },

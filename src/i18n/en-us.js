@@ -108,7 +108,7 @@ export default {
   categoryType: {
     category: 'Category',
     'PPRREC': 'PPR Recreation Center',
-    'PPROPERATION': 'PPR Operation',
+    'PPROPERATIONS': 'PPR Operations',
     'ENVIRONMENTALEDUCATIONCENTER': 'Environmental Education Center',
     'OLDERADULTCENTER': 'Older Adult Center',
     'MUSEUM': 'Museum',
