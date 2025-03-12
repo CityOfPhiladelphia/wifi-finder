@@ -86,7 +86,9 @@ export default {
   },
   operator: 'Operator',
   seeBelow: "see below",
-  holidayClosure: "This site is currently temporarily closed for ",
+  holidayClosure: "See more stats about the Verizon Inet Project <a href='#'>here</a>",
+
+  holidayClosureAllSites: 'Hours may change during the holiday weekend. Contact the site before you go.',
   futureHolidayClosure: "This site will by temporarily closed for ",
   introPage: {
     section1Title: "Find free wifi",

@@ -36,7 +36,7 @@ let i18n = {
     ],
     header: 'inside',
     enabled: true,
-    selectorHidden: true,
+    selectorHidden: false,
     refinePanel: true,
     expandCollapseTitle: true,
     footer: true,

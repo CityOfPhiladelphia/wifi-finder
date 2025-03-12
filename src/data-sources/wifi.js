@@ -12,8 +12,9 @@ export default {
     },
     success: function(data, dependent) {
       data.features = data.features.filter(function(feature) {
-        return feature.geometry;
+        return feature.geometry && feature.properties && feature.properties.PUBLIC_WIFI_AVAILABLE === 'Y';
       });
+
     },
   },
 };

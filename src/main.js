@@ -72,7 +72,7 @@ let $config = {
   allowPrint: true,
   showBuffers: true,
   resetDataOnGeocode: true,
-  retractableRefine: false,
+  retractableRefine: true,
   dropdownRefine: false,
   searchBar: {
     searchTypes: [
@@ -319,7 +319,10 @@ let $config = {
       include_units: true,
     },
   },
-  holidays: {},
+  holidays: {
+    forceBanner: true,
+    forceBannerMessage: 'holidayClosure',
+  },
   mapLayer: {
     id: 'resources',
     source: 'resources',
