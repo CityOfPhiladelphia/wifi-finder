@@ -23,11 +23,11 @@ import { faCarBus } from '@fortawesome/pro-solid-svg-icons/faCarBus';
 library.add(farAngleDown, farAngleUp, farTimes, farPlus, farMinus, faCheck, faCarBus);
 
 // use these if running off unlinked package
-import pinboard from '@phila/pinboard';
-import '../node_modules/@phila/pinboard/dist/style.css';
+// import pinboard from '@phila/pinboard';
+// import '../node_modules/@phila/pinboard/dist/style.css';
 // OR
 // use this if running off linked package
-// import pinboard from '../node_modules/@phila/pinboard/src/main.js';
+import pinboard from '../node_modules/@phila/pinboard/src/main.js';
 
 // data-sources
 import wifi from './data-sources/wifi';
@@ -43,6 +43,7 @@ import legendControl from './general/legendControl';
 
 
 import i18n from './i18n/i18n';
+import { sub } from 'date-fns';
 console.log('main.js i18n:', i18n);
 
 let $config = {
@@ -64,6 +65,7 @@ let $config = {
   },
   fieldsUsed: {
     section: 'PROGRAM_TYPE',
+    subsection: 'PROGRAM_TYPE',
   },
   agoTokenNeeded: true,
   allowZipcodeSearch: true,
@@ -124,12 +126,66 @@ let $config = {
   //   },
   // },
   refine: {
-    type: 'multipleFields',
-    // columns: true,
-    multipleFields: {
-      'Computers to Display': function(item) { return item.properties.AVAILABLE_COMPUTERS_TO_DISPLAY_Y_N === 'Y'; },
+    type: 'multipleFieldGroups',
+    columns: true,
+    multipleFieldGroups: {
+      categoryType: {
+        radio: {
+          'PPRREC': {
+            unique_key: 'categoryType_PPRREC',
+            i18n_key: 'categoryType.PPRREC',
+            value: function(item) {
+              return item.properties.PROGRAM_TYPE === 'PPR_REC';
+            },
+          },
+          'PPROPERATION': {
+            unique_key: 'categoryType_PPROPERATION',
+            i18n_key: 'categoryType.PPROPERATION',
+            value: function(item) {
+              return item.properties.PROGRAM_TYPE === 'PPR_OPERATIONS';
+            },
+          },
+          'ENVIRONMENTALEDUCATIONCENTER': {
+            unique_key: 'categoryType_ENVIRONMENTALEDUCATIONCENTER',
+            i18n_key: 'categoryType.ENVIRONMENTALEDUCATIONCENTER',
+            value: function(item) {
+              return item.properties.PROGRAM_TYPE === 'ENVIRONMENTAL_EDUCATION_CENTER';
+            },
+          },
+          'OLDERADULTCENTER': {
+            unique_key: 'categoryType_OLDERADULTCENTER',
+            i18n_key: 'categoryType.OLDERADULTCENTER',
+            value: function(item) {
+              return item.properties.PROGRAM_TYPE === 'OLDER_ADULT_CENTER';
+            },
+          },
+          'MUSEUM': {
+            unique_key: 'categoryType_MUSEUM',
+            i18n_key: 'categoryType.MUSEUM',
+            value: function(item) {
+              return item.properties.PROGRAM_TYPE === 'MUSEUM';
+            },
+          },
+          'LIBRARY': {
+            unique_key: 'categoryType_LIBRARY',
+            i18n_key: 'categoryType.LIBRARY',
+            value: function(item) {
+              return item.properties.PROGRAM_TYPE === 'LIBRARY';
+            },
+          },
+          'OTHER': {
+            unique_key: 'categoryType_OTHER',
+            i18n_key: 'categoryType.OTHER',
+            value: function(item) {
+              return item.properties.PROGRAM_TYPE === 'OTHER';
+            },
+          },
+        },
+        columns: 2,
+      }
+      // 'Computers to Display': function(item) { return item.properties.AVAILABLE_COMPUTERS_TO_DISPLAY_Y_N === 'Y'; },
       // 'Computers for Afterschool Camp': function(item) { return item.properties.COMPUTERS_AFTERSCHOOL_CAMP_Y_N === 'Y'; },
-      'Computers for Public Access': function(item) { return item.properties.COMPUTERS_PUBLIC_ACCESS_Y_N === 'Y'; },
+      // 'Computers for Public Access': function(item) { return item.properties.COMPUTERS_PUBLIC_ACCESS_Y_N === 'Y'; },
     },
   },
   legendControl,
@@ -140,41 +196,50 @@ let $config = {
     enabled: false,
   },
   sections: {
-    PPR_REC:{
+    PPRREC:{
       title: 'PPR Recreation Centers',
-      titleSingular: 'PPR Recreation Center',
+      titleSingular: 'PPRREC',
       color: '#0F4D90',
     },
-    PPR_OPERATIONS:{
+    PPROPERATIONS:{
       title: 'PPR Operations',
-      titleSingular: 'PPR Operation',
+      titleSingular: 'PPROPERATIONS',
       color: '#721817',
     },
-    ENVIRONMENTAL_EDUCATION_CENTER:{
+    ENVIRONMENTALEDUCATIONCENTER:{
       title: 'Environmental Education Centers',
-      titleSingular: 'Environmental Education Center',
+      titleSingular: 'ENVIRONMENTALEDUCATIONCENTER',
       color: '#a86518',
     },
-    OLDER_ADULT_CENTER: {
+    OLDERADULTCENTER: {
       title: 'Older Adult Centers',
-      titleSingular: 'Older Adult Center',
+      titleSingular: 'OLDERADULTCENTER',
       color: '#444444',
     },
     MUSEUM:{
       title: 'Museums',
-      titleSingular: 'Museum',
+      titleSingular: 'MUSEUM',
       color: '#B569C3',
     },
     LIBRARY:{
       title: 'Libraries',
-      titleSingular: 'Library',
+      titleSingular: 'LIBRARY',
       color: '#506D0A',
     },
     OTHER:{
       title: 'Other PPR Locations',
-      titleSingular: 'Other PPR Location',
+      titleSingular: 'OTHER',
       color: '#BAAC2C',
     },
+  },
+  subsections: {
+    'PPR_REC': 'PPRREC',
+    'PPR_OPERATIONS': 'PPROPERATIONS',
+    'ENVIRONMENTAL_EDUCATION_CENTER': 'ENVIRONMENTALEDUCATIONCENTER',
+    'OLDER_ADULT_CENTER': 'OLDERADULTCENTER',
+    'MUSEUM': 'MUSEUM',
+    'LIBRARY': 'LIBRARY',
+    'OTHER': 'OTHER',
   },
   projection: '3857',
   geocoder: {
