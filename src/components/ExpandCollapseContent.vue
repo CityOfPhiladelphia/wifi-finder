@@ -7,6 +7,8 @@ const { t } = useI18n();
 import { format, parseISO } from 'date-fns';
 import { fr, vi, ru, es, enUS, zhCN } from 'date-fns/locale';
 
+import VerticalTable from './VerticalTable.vue';
+
 const props = defineProps({
   item: {
     type: Object,
@@ -650,6 +652,13 @@ const otherServices = computed(() => {
 
       </div>
     </div>
+
+    <vertical-table :data="
+      [
+        { label: 'Internet Speed', value: item.properties.CURRENT_INTERNET_SPEED_MBPS },
+        { label: 'Total Computers', value: item.properties.TOTAL_COMPUTERS },
+      ]"
+    />
 
     <h3>{{ $t('computerServices.category') }}</h3>
 
