@@ -434,6 +434,47 @@ const subwayValueWithComma = (option, index) => {
   return t(`transit.subway.${option.trim()}`);
 };
 
+const internetServices = computed(() => {
+  let columns = [
+    {
+      label: 'Service',
+      i18nLabel: 'service',
+      field: 'service',
+      thClass: 'th-black-class',
+      tdClass: 'table-text',
+    },
+    {
+      label: 'yesNo',
+      i18nLabel: 'yesNo',
+      field: 'yesNo',
+      thClass: 'th-black-class',
+      tdClass: 'table-text',
+    },
+  ];
+  let rows = [];
+  rows.push({
+    id: 1,
+    service: 'internetServices.verizon',
+    value: props.item.properties.VERIZON_INET_FIBER === 'Y',
+  });
+  rows.push({
+    id: 1,
+    service: 'internetServices.meraki',
+    value: props.item.properties.MERAKI_WIFI === 'Y',
+  });
+  // rows.push({
+  //   id: 1,
+  //   service: 'internetServices.additionalComputerClasses',
+  //   value: props.item.properties.ADDITIONAL_COMPUTER_CLASSES_Y_N === 'Y',
+  // });
+  // rows.push({
+  //   id: 1,
+  //   service: 'internetServices.esports',
+  //   value: props.item.properties.ESPORTS === 'Y',
+  // });
+  return { columns, rows };
+});
+
 const computerServices = computed(() => {
   let columns = [
     {
@@ -659,6 +700,63 @@ const otherServices = computed(() => {
         { label: 'Total Computers', value: item.properties.TOTAL_COMPUTERS },
       ]"
     />
+
+    <h3>{{ $t('internetServices.category') }}</h3>
+
+    <div class="table-intro">
+      <div class="table-intro">
+        {{ $t('cards.table0Intro') }}
+      </div>
+    </div>
+
+    <vue-good-table
+        :columns="internetServices.columns"
+        :rows="internetServices.rows"
+        :sort-options="{ enabled: false }"
+        style-class="table"
+      >
+        <template #table-column="props">
+          <span
+            v-if="props.column.label =='Service'"
+            class="table-header-text"
+          >
+            {{ $t(props.column.i18nLabel) }}
+          </span>
+          <div
+            v-if="props.column.label =='yesNo'"
+            class="center table-header-text"
+          >
+            {{ $t(props.column.i18nLabel) }}
+          </div>
+        </template>
+
+        <template #table-row="props">
+        <span
+          v-if="props.column.field == 'service'"
+          class="table-text"
+        >
+          {{ $t(props.row.service) }}
+        </span>
+
+        <div
+          v-if="props.column.field == 'yesNo'"
+          class="center"
+        >
+          <font-awesome-icon
+            v-if="props.row.value == true"
+            :icon="['far', 'check']"
+          />
+        </div>
+      </template>
+
+      <template #emptystate>
+        <div>
+          {{ $t('tableNoData.noServices') }}
+        </div>
+      </template>
+
+    </vue-good-table>
+
 
     <h3>{{ $t('computerServices.category') }}</h3>
 

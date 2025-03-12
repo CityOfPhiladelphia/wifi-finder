@@ -183,6 +183,25 @@ let $config = {
         },
         columns: 2,
       },
+      internetServices: {
+        checkbox: {
+          'verizon': {
+            unique_key: 'internetServices_verizon',
+            i18n_key: 'internetServices.verizon',
+            value: function(item) {
+              return item.properties.VERIZON_INET_FIBER === 'Y';
+            },
+          },
+          'meraki': {
+            unique_key: 'internetServices_meraki',
+            i18n_key: 'internetServices.meraki',
+            value: function(item) {
+              return item.properties.MERAKI_WIFI === 'Y';
+            },
+          },
+        },
+        columns: 1,
+      },
       computerServices: {
         checkbox: {
           'computersPublicAccess': {

@@ -115,6 +115,11 @@ export default {
     LIBRARY: 'Library',
     OTHER: 'Other PPR Location',
   },
+  internetServices: {
+    category: 'Internet Services',
+    verizon: 'Verizon Inet Fiber',
+    meraki: 'Meraki Wifi',
+  },
   computerServices: {
     category: 'Computer Services',
     computersPublicAccess: 'Computers - Public Access',
@@ -132,6 +137,7 @@ export default {
     noServices: 'No services available',
   },
   cards: {
+    table0Intro: 'These internet services are offered at this location',
     table1Intro: 'These computer services are offered at this location',
     table2Intro: 'These other services are offered at this location',
   }
