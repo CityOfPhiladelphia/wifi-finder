@@ -10,5 +10,10 @@ export default {
       outFields: '*',
       f: 'geojson',
     },
+    success: function(data, dependent) {
+      data.features = data.features.filter(function(feature) {
+        return feature.geometry;
+      });
+    },
   },
 };
