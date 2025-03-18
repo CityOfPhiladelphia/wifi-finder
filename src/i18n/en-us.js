@@ -7,6 +7,7 @@ export default {
     //   all: 'Search by address or market name',
     // },
   },
+  service: "Service",
   statusPage: "<a href='#' target='_blank'>See the total number of sites activated since October 2024</a> as part of the City's Verizon Franchise Agreement",
   introPage: {
     section1Title: "Find free wifi",
@@ -25,14 +26,14 @@ export default {
     p3: "Many of these locations also offer access to computers for residents. Some locations offer regular hours where any resident can use a computer during open access hours. Other locations offer digital skills workshops and classes at scheduled times to help residents learn how to navigate the web or use a computer. Some locations only offer computer access to specific programs run by those locations, such as for afterschool students, at this time. Contact the site directly for information about what each site offers.",
   },
   categoryType: {
-    category: 'Category',
-    PPRREC: 'PPR Recreation Center',
+    category: 'Site type',
+    'PPR Recreation Center': 'PPR Recreation Center',
     PPROPERATIONS: 'PPR Operations',
     ENVIRONMENTALEDUCATIONCENTER: 'Environmental Education Center',
-    OLDERADULTCENTER: 'Older Adult Center',
+    'Older Adult Center': 'Older Adult Center',
     MUSEUM: 'Museum',
-    LIBRARY: 'Library',
-    OTHER: 'Other PPR Location',
+    Library: 'Library',
+    'Other PPR Site': 'Other PPR Site',
   },
   internetServices: {
     category: 'Internet Services',

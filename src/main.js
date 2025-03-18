@@ -65,8 +65,8 @@ let $config = {
     category: 'rf-wifi',
   },
   fieldsUsed: {
-    section: 'PROGRAM_TYPE',
-    subsection: 'PROGRAM_TYPE',
+    section: 'PROGRAM_TYPE_TO_DISPLAY',
+    subsection: 'PROGRAM_TYPE_TO_DISPLAY',
   },
   agoTokenNeeded: true,
   allowZipcodeSearch: true,
@@ -89,7 +89,7 @@ let $config = {
     tags: [
       {
         type: 'value',
-        field: 'name',
+        field: 'SITE_NAME',
       },
     ],
   },
@@ -139,32 +139,11 @@ let $config = {
               return item.properties.PROGRAM_TYPE === 'PPR_REC';
             },
           },
-          'PPROPERATIONS': {
-            unique_key: 'categoryType_PPROPERATIONS',
-            i18n_key: 'categoryType.PPROPERATIONS',
-            value: function(item) {
-              return item.properties.PROGRAM_TYPE === 'PPR_OPERATIONS';
-            },
-          },
-          'ENVIRONMENTALEDUCATIONCENTER': {
-            unique_key: 'categoryType_ENVIRONMENTALEDUCATIONCENTER',
-            i18n_key: 'categoryType.ENVIRONMENTALEDUCATIONCENTER',
-            value: function(item) {
-              return item.properties.PROGRAM_TYPE === 'ENVIRONMENTAL_EDUCATION_CENTER';
-            },
-          },
           'OLDERADULTCENTER': {
             unique_key: 'categoryType_OLDERADULTCENTER',
             i18n_key: 'categoryType.OLDERADULTCENTER',
             value: function(item) {
               return item.properties.PROGRAM_TYPE === 'OLDER_ADULT_CENTER';
-            },
-          },
-          'MUSEUM': {
-            unique_key: 'categoryType_MUSEUM',
-            i18n_key: 'categoryType.MUSEUM',
-            value: function(item) {
-              return item.properties.PROGRAM_TYPE === 'MUSEUM';
             },
           },
           'LIBRARY': {
@@ -191,13 +170,6 @@ let $config = {
             i18n_key: 'internetServices.verizon',
             value: function(item) {
               return item.properties.VERIZON_INET_FIBER === 'Y';
-            },
-          },
-          'meraki': {
-            unique_key: 'internetServices_meraki',
-            i18n_key: 'internetServices.meraki',
-            value: function(item) {
-              return item.properties.MERAKI_WIFI === 'Y';
             },
           },
         },
@@ -265,50 +237,32 @@ let $config = {
     enabled: false,
   },
   sections: {
-    PPRREC:{
+    'PPR Recreation Centers':{
       title: 'PPR Recreation Centers',
-      titleSingular: 'PPRREC',
-      color: '#0F4D90',
-    },
-    PPROPERATIONS:{
-      title: 'PPR Operations',
-      titleSingular: 'PPROPERATIONS',
-      color: '#721817',
-    },
-    ENVIRONMENTALEDUCATIONCENTER:{
-      title: 'Environmental Education Centers',
-      titleSingular: 'ENVIRONMENTALEDUCATIONCENTER',
-      color: '#a86518',
-    },
-    OLDERADULTCENTER: {
-      title: 'Older Adult Centers',
-      titleSingular: 'OLDERADULTCENTER',
-      color: '#444444',
-    },
-    MUSEUM:{
-      title: 'Museums',
-      titleSingular: 'MUSEUM',
-      color: '#B569C3',
-    },
-    LIBRARY:{
-      title: 'Libraries',
-      titleSingular: 'LIBRARY',
+      titleSingular: 'PPR Recreation Center',
       color: '#506D0A',
     },
-    OTHER:{
-      title: 'Other PPR Locations',
-      titleSingular: 'OTHER',
-      color: '#BAAC2C',
+    'Older Adult Centers': {
+      title: 'Older Adult Centers',
+      titleSingular: 'Older Adult Center',
+      color: '#721817',
+    },
+    'Libraries':{
+      title: 'Libraries',
+      titleSingular: 'Library',
+      color: '#0F4D90',
+    },
+    'Other PPR Sites':{
+      title: 'Other PPR Sites',
+      titleSingular: 'Other PPR Site',
+      color: '#B569C3',
     },
   },
   subsections: {
-    'PPR_REC': 'PPRREC',
-    'PPR_OPERATIONS': 'PPROPERATIONS',
-    'ENVIRONMENTAL_EDUCATION_CENTER': 'ENVIRONMENTALEDUCATIONCENTER',
-    'OLDER_ADULT_CENTER': 'OLDERADULTCENTER',
-    'MUSEUM': 'MUSEUM',
-    'LIBRARY': 'LIBRARY',
-    'OTHER': 'OTHER',
+    'PPR Recreation Centers': 'PPR Recreation Centers',
+    'Older Adult Centers': 'Older Adult Centers',
+    'Libraries': 'Libraries',
+    'Other PPR Sites (I.e Museum, Education Centers, etc.)': 'Other PPR Sites',
   },
   projection: '3857',
   geocoder: {
@@ -332,38 +286,21 @@ let $config = {
       'circle-radius': 7,
       'circle-color': [
         'match',
-        ['get', 'PROGRAM_TYPE'],
-        'PPR_REC',
-        '#0F4D90',
-        'PPR_OPERATIONS',
-        '#721817',
-        'ENVIRONMENTAL_EDUCATION_CENTER',
-        '#a86518',
-        'OLDER_ADULT_CENTER',
-        '#444444',
-        'MUSEUM',
-        '#B569C3',
-        'LIBRARY',
+        ['get', 'PROGRAM_TYPE_TO_DISPLAY'],
+        'PPR Recreation Centers',
         '#506D0A',
-        'OTHER',
-        '#BAAC2C',
+        'Older Adult Centers',
+        '#721817',
+        'Libraries',
+        '#0F4D90',
+        'Other PPR Sites (I.e Museum, Education Centers, etc.)',
+        '#B569C3',
         /* other */ '#000000'
       ],
       'circle-stroke-width': 1,
       'circle-stroke-color': 'white',
     },
   },
-  // mapLayer: {
-  //   id: 'resources',
-  //   source: 'resources',
-  //   type: 'circle',
-  //   paint: {
-  //     'circle-radius': 7,
-  //     'circle-color': '#2176d2',
-  //     'circle-stroke-width': 1,
-  //     'circle-stroke-color': 'white',
-  //   },
-  // },
   footer: [
     {
       type: "native",
