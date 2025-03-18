@@ -58,7 +58,8 @@ let $config = {
   publicPath: import.meta.env.VITE_PUBLICPATH,
   app: {
     type: 'wifi',
-    title: 'Find Free Wifi in Philadelphia',
+    // title: 'Find Free Wifi in Philadelphia',
+    // subtitle: 'i18n',
   },
   gtag: {
     category: 'rf-wifi',
@@ -321,7 +322,7 @@ let $config = {
   },
   holidays: {
     forceBanner: true,
-    forceBannerMessage: 'holidayClosure',
+    forceBannerMessage: 'statusPage',
   },
   mapLayer: {
     id: 'resources',

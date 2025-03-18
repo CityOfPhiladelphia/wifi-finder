@@ -12,7 +12,8 @@ export default {
     },
     success: function(data, dependent) {
       data.features = data.features.filter(function(feature) {
-        return feature.geometry && feature.properties && feature.properties.PUBLIC_WIFI_AVAILABLE === 'Y';
+        return feature.geometry && feature.properties && feature.properties.VERIZON_INET_FIBER === 'Y' ||
+        feature.geometry && feature.properties && feature.properties.PROGRAM_TYPE_TO_DISPLAY === 'Libraries';
       });
 
     },
