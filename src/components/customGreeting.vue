@@ -151,6 +151,20 @@ const allTwitter = computed(() => {
       <div>
         <p v-html="$t('introPage.p3')" />
       </div>
+
+      <h3>
+        {{ $t('introPage.section3Title') }}
+      </h3>
+      <div>
+        <p v-html="$t('introPage.p4')" />
+      </div>
+
+      <h3>
+        {{ $t('introPage.section4Title') }}
+      </h3>
+      <div>
+        <p v-html="$t('introPage.p5')" />
+      </div>
       
     </div> <!-- end of main-area -->
   </div>

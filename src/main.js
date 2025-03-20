@@ -23,11 +23,11 @@ import { faCarBus } from '@fortawesome/pro-solid-svg-icons/faCarBus';
 library.add(farAngleDown, farAngleUp, farTimes, farPlus, farMinus, faCheck, faCarBus);
 
 // use these if running off unlinked package
-import pinboard from '@phila/pinboard';
-import '../node_modules/@phila/pinboard/dist/style.css';
+// import pinboard from '@phila/pinboard';
+// import '../node_modules/@phila/pinboard/dist/style.css';
 // OR
 // use this if running off linked package
-// import pinboard from '../node_modules/@phila/pinboard/src/main.js';
+import pinboard from '../node_modules/@phila/pinboard/src/main.js';
 
 // data-sources
 import wifi from './data-sources/wifi';
@@ -73,7 +73,7 @@ let $config = {
   allowPrint: true,
   showBuffers: true,
   resetDataOnGeocode: true,
-  retractableRefine: true,
+  retractableRefine: false,
   dropdownRefine: false,
   searchBar: {
     searchTypes: [
@@ -161,7 +161,7 @@ let $config = {
             },
           },
         },
-        columns: 2,
+        columns: 4,
       },
       internetServices: {
         checkbox: {
@@ -181,52 +181,52 @@ let $config = {
             unique_key: 'computerServices_computersPublicAccess',
             i18n_key: 'computerServices.computersPublicAccess',
             value: function(item) {
-              return item.properties.COMPUTERS_PUBLIC_ACCESS_Y_N === 'Y';
+              return item.properties.AVAILABLE_COMPUTERS_TO_DISPLAY_ === 'Y';
             },
           },
-          'computersAfterschoolCamp': {
-            unique_key: 'computerServices_computersAfterschoolCamp',
-            i18n_key: 'computerServices.computersAfterschoolCamp',
-            value: function(item) {
-              return item.properties.COMPUTERS_AFTERSCHOOL_CAMP_Y_N === 'Y';
-            },
-          },
-          'additionalComputerClasses': {
-            unique_key: 'computerServices_additionalComputerClasses',
-            i18n_key: 'computerServices.additionalComputerClasses',
-            value: function(item) {
-              return item.properties.ADDITIONAL_COMPUTER_CLASSES_Y_N === 'Y';
-            },
-          },
-          'esports': {
-            unique_key: 'computerServices_esports',
-            i18n_key: 'computerServices.esports',
-            value: function(item) {
-              return item.properties.ESPORTS === 'Y';
-            },
-          },
+          // 'computersAfterschoolCamp': {
+          //   unique_key: 'computerServices_computersAfterschoolCamp',
+          //   i18n_key: 'computerServices.computersAfterschoolCamp',
+          //   value: function(item) {
+          //     return item.properties.COMPUTERS_AFTERSCHOOL_CAMP_Y_N === 'Y';
+          //   },
+          // },
+          // 'additionalComputerClasses': {
+          //   unique_key: 'computerServices_additionalComputerClasses',
+          //   i18n_key: 'computerServices.additionalComputerClasses',
+          //   value: function(item) {
+          //     return item.properties.ADDITIONAL_COMPUTER_CLASSES_Y_N === 'Y';
+          //   },
+          // },
+          // 'esports': {
+          //   unique_key: 'computerServices_esports',
+          //   i18n_key: 'computerServices.esports',
+          //   value: function(item) {
+          //     return item.properties.ESPORTS === 'Y';
+          //   },
+          // },
         },
         columns: 2,
       },
-      otherServices: {
-        checkbox: {
-          'generalAfterschoolCamp': {
-            unique_key: 'otherServices_generalAfterschoolCamp',
-            i18n_key: 'otherServices.generalAfterschoolCamp',
-            value: function(item) {
-              return item.properties.GENERAL_AFTERSCHOOL_CAMP === 'Y';
-            },
-          },
-          'gym': {
-            unique_key: 'otherServices_gym',
-            i18n_key: 'otherServices.gym',
-            value: function(item) {
-              return item.properties.GYM === 'Y';
-            },
-          },
-        },
-        columns: 1,
-      },
+      // otherServices: {
+      //   checkbox: {
+      //     'generalAfterschoolCamp': {
+      //       unique_key: 'otherServices_generalAfterschoolCamp',
+      //       i18n_key: 'otherServices.generalAfterschoolCamp',
+      //       value: function(item) {
+      //         return item.properties.GENERAL_AFTERSCHOOL_CAMP === 'Y';
+      //       },
+      //     },
+      //     'gym': {
+      //       unique_key: 'otherServices_gym',
+      //       i18n_key: 'otherServices.gym',
+      //       value: function(item) {
+      //         return item.properties.GYM === 'Y';
+      //       },
+      //     },
+      //   },
+      //   columns: 1,
+      // },
     },
   },
   legendControl,
@@ -238,23 +238,23 @@ let $config = {
   },
   sections: {
     'PPR Recreation Centers':{
-      title: 'PPR Recreation Centers',
-      titleSingular: 'PPR Recreation Center',
+      title: 'PPRREC',
+      titleSingular: 'PPRREC',
       color: '#506D0A',
     },
     'Older Adult Centers': {
-      title: 'Older Adult Centers',
-      titleSingular: 'Older Adult Center',
+      title: 'OLDERADULTCENTER',
+      titleSingular: 'OLDERADULTCENTER',
       color: '#721817',
     },
     'Libraries':{
-      title: 'Libraries',
-      titleSingular: 'Library',
+      title: 'LIBRARY',
+      titleSingular: 'LIBRARY',
       color: '#0F4D90',
     },
     'Other PPR Sites':{
-      title: 'Other PPR Sites',
-      titleSingular: 'Other PPR Site',
+      title: 'OTHER',
+      titleSingular: 'OTHER',
       color: '#B569C3',
     },
   },

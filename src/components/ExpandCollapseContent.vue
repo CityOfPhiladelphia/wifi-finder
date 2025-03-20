@@ -3,7 +3,7 @@
 import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
 
-import VerticalTable from './VerticalTable.vue';
+// import VerticalTable from './VerticalTable.vue';
 
 const props = defineProps({
   item: {
@@ -64,9 +64,14 @@ const internetServices = computed(() => {
   });
   rows.push({
     id: 1,
-    service: 'internetServices.meraki',
-    value: props.item.properties.MERAKI_WIFI === 'Y',
+    service: 'computerServices.computersPublicAccess',
+    value: props.item.properties.AVAILABLE_COMPUTERS_TO_DISPLAY_ === 'Y',
   });
+  // rows.push({
+  //   id: 1,
+  //   service: 'internetServices.meraki',
+  //   value: props.item.properties.MERAKI_WIFI === 'Y',
+  // });
   return { columns, rows };
 });
 
@@ -223,18 +228,18 @@ const otherServices = computed(() => {
       </div>
     </div>
 
-    <vertical-table :data="
+    <!-- <vertical-table :data="
       [
         { label: 'Internet Speed', value: item.properties.CURRENT_INTERNET_SPEED_MBPS },
         { label: 'Total Computers', value: item.properties.TOTAL_COMPUTERS },
       ]"
-    />
+    /> -->
 
-    <h3>{{ $t('internetServices.category') }}</h3>
+    <h3>{{ $t('services.category') }}</h3>
 
     <div class="table-intro">
       <div class="table-intro">
-        {{ $t('cards.table0Intro') }}
+        {{ $t('cards.tableServicesIntro') }}
       </div>
     </div>
 
@@ -287,7 +292,7 @@ const otherServices = computed(() => {
     </vue-good-table>
 
 
-    <h3>{{ $t('computerServices.category') }}</h3>
+    <!-- <h3>{{ $t('computerServices.category') }}</h3>
 
     <div class="table-intro">
       <div class="table-intro">
@@ -341,9 +346,9 @@ const otherServices = computed(() => {
         </div>
       </template>
 
-    </vue-good-table>
+    </vue-good-table> -->
 
-    <h3>{{ $t('otherServices.category') }}</h3>
+    <!-- <h3>{{ $t('otherServices.category') }}</h3>
 
     <div class="table-intro">
       <div class="table-intro">
@@ -397,7 +402,7 @@ const otherServices = computed(() => {
         </div>
       </template>
 
-    </vue-good-table>
+    </vue-good-table> -->
 
   </div>
 </template>
