@@ -131,7 +131,7 @@ let $config = {
     columns: true,
     multipleFieldGroups: {
       categoryType: {
-        radio: {
+        checkbox: {
           'PPRREC': {
             unique_key: 'categoryType_PPRREC',
             i18n_key: 'categoryType.PPRREC',
