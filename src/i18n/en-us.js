@@ -35,17 +35,17 @@ export default {
     'PPR Recreation Center': 'Recreation Center',
     'OLDERADULTCENTER': 'Older Adult Center',
     'LIBRARY': 'Library',
-    'OTHER': 'Other PPR Site',
+    'OTHER': 'Other Site',
   },
   services: {
     category: 'Services',
-    verizon: 'Verizon INET Fiber',
+    verizon: 'Verizon Franchise Location',
     wifi: 'Public Wi-Fi Available',
-    computersPublicAccess: 'Computer Services',
+    computersPublicAccess: 'Computers Available',
   },
   internetServices: {
     category: 'Internet Services',
-    verizon: 'Verizon INET Fiber',
+    verizon: 'Verizon Franchise Location',
     meraki: 'Meraki Wifi',
   },
   computerServices: {

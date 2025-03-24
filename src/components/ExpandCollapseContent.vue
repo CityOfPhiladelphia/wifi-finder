@@ -31,20 +31,6 @@ const phoneNumber = (value) => {
   return (!m) ? null : "(" + m[1] + ") " + m[2] + "-" + m[3];
 }
 
-const makeValidUrl = (url) => {
-  let newUrl = window.decodeURIComponent(url);
-  newUrl = newUrl
-    .trim()
-    .replace(/\s/g, '');
-  if (/^(:\/\/)/.test(newUrl)) {
-    return `http${newUrl}`;
-  }
-  if (!/^(f|ht)tps?:\/\//i.test(newUrl)) {
-    return `http://${newUrl}`;
-  }
-  return newUrl;
-};
-
 const internetServices = computed(() => {
   let columns = [
     {
@@ -81,77 +67,77 @@ const internetServices = computed(() => {
   return { columns, rows };
 });
 
-const computerServices = computed(() => {
-  let columns = [
-    {
-      label: 'Service',
-      i18nLabel: 'service',
-      field: 'service',
-      thClass: 'th-black-class',
-      tdClass: 'table-text',
-    },
-    {
-      label: 'yesNo',
-      i18nLabel: 'yesNo',
-      field: 'yesNo',
-      thClass: 'th-black-class',
-      tdClass: 'table-text',
-    },
-  ];
-  let rows = [];
-  rows.push({
-    id: 1,
-    service: 'computerServices.computersPublicAccess',
-    value: props.item.properties.computers_public_access_y_n === 'Y',
-  });
-  rows.push({
-    id: 1,
-    service: 'computerServices.computersAfterschoolCamp',
-    value: props.item.properties.computers_afterschool_camp_y_n === 'Y',
-  });
-  rows.push({
-    id: 1,
-    service: 'computerServices.additionalComputerClasses',
-    value: props.item.properties.additional_computer_classes_y_n === 'Y',
-  });
-  rows.push({
-    id: 1,
-    service: 'computerServices.esports',
-    value: props.item.properties.esports === 'Y',
-  });
-  return { columns, rows };
-});
+// const computerServices = computed(() => {
+//   let columns = [
+//     {
+//       label: 'Service',
+//       i18nLabel: 'service',
+//       field: 'service',
+//       thClass: 'th-black-class',
+//       tdClass: 'table-text',
+//     },
+//     {
+//       label: 'yesNo',
+//       i18nLabel: 'yesNo',
+//       field: 'yesNo',
+//       thClass: 'th-black-class',
+//       tdClass: 'table-text',
+//     },
+//   ];
+//   let rows = [];
+//   rows.push({
+//     id: 1,
+//     service: 'computerServices.computersPublicAccess',
+//     value: props.item.properties.computers_public_access_y_n === 'Y',
+//   });
+//   rows.push({
+//     id: 1,
+//     service: 'computerServices.computersAfterschoolCamp',
+//     value: props.item.properties.computers_afterschool_camp_y_n === 'Y',
+//   });
+//   rows.push({
+//     id: 1,
+//     service: 'computerServices.additionalComputerClasses',
+//     value: props.item.properties.additional_computer_classes_y_n === 'Y',
+//   });
+//   rows.push({
+//     id: 1,
+//     service: 'computerServices.esports',
+//     value: props.item.properties.esports === 'Y',
+//   });
+//   return { columns, rows };
+// });
 
-const otherServices = computed(() => {
-  let columns = [
-    {
-      label: 'Service',
-      i18nLabel: 'service',
-      field: 'service',
-      thClass: 'th-black-class',
-      tdClass: 'table-text',
-    },
-    {
-      label: 'yesNo',
-      i18nLabel: 'yesNo',
-      field: 'yesNo',
-      thClass: 'th-black-class',
-      tdClass: 'table-text',
-    },
-  ];
-  let rows = [];
-  rows.push({
-    id: 1,
-    service: 'otherServices.generalAfterschoolCamp',
-    value: props.item.properties.general_afterschool_camp === 'Y',
-  });
-  rows.push({
-    id: 1,
-    service: 'otherServices.gym',
-    value: props.item.properties.gym === 'Y',
-  });
-  return { columns, rows };
-});
+// const otherServices = computed(() => {
+//   let columns = [
+//     {
+//       label: 'Service',
+//       i18nLabel: 'service',
+//       field: 'service',
+//       thClass: 'th-black-class',
+//       tdClass: 'table-text',
+//     },
+//     {
+//       label: 'yesNo',
+//       i18nLabel: 'yesNo',
+//       field: 'yesNo',
+//       thClass: 'th-black-class',
+//       tdClass: 'table-text',
+//     },
+//   ];
+//   let rows = [];
+//   rows.push({
+//     id: 1,
+//     service: 'otherServices.generalAfterschoolCamp',
+//     value: props.item.properties.general_afterschool_camp === 'Y',
+//   });
+//   rows.push({
+//     id: 1,
+//     service: 'otherServices.gym',
+//     value: props.item.properties.gym === 'Y',
+//   });
+//   return { columns, rows };
+// });
 
 </script>
 
@@ -160,12 +146,6 @@ const otherServices = computed(() => {
     <print-share-section
       :item="item"
     />
-    <callout
-      v-if="item.properties.editdate && item.properties.editdate < 1711929600000"
-      class="is-info"
-    >
-      {{ oldInfoMessage }}
-    </callout>
     <div class="columns top-section">
       <div class="column is-6">
         <div
@@ -219,9 +199,9 @@ const otherServices = computed(() => {
           <div class="column is-11">
             <a
               target="_blank"
-              :href="makeValidUrl(item.properties.url_link)"
+              :href="item.properties.url"
             >
-              {{ item.properties.url }}
+              {{ item.properties.url_text }}
               <font-awesome-icon icon="external-link-alt" />
             </a>
           </div>

@@ -32,7 +32,7 @@ export default {
         'font-size': '12px',
         'background-color': '#0F4D90',
       },
-      'Other': {
+      'Other Site': {
         'border-color': 'black',
         'border-style': 'solid',
         'border-weight': '0px',
