@@ -65,8 +65,8 @@ let $config = {
     category: 'rf-wifi',
   },
   fieldsUsed: {
-    section: 'PROGRAM_TYPE_TO_DISPLAY',
-    subsection: 'PROGRAM_TYPE_TO_DISPLAY',
+    section: 'program_type_to_display',
+    subsection: 'program_type_to_display',
   },
   agoTokenNeeded: true,
   allowZipcodeSearch: true,
@@ -89,14 +89,14 @@ let $config = {
     tags: [
       {
         type: 'value',
-        field: 'SITE_NAME',
+        field: 'site_name',
       },
     ],
   },
   locationInfo: {
-    siteNameField: 'SITE_NAME',
+    siteNameField: 'site_name',
     siteName: function(item) {
-      return item.properties.SITE_NAME;
+      return item.properties.site_name;
     },
   },
   customComps,
@@ -136,28 +136,28 @@ let $config = {
             unique_key: 'categoryType_PPRREC',
             i18n_key: 'categoryType.PPRREC',
             value: function(item) {
-              return item.properties.PROGRAM_TYPE === 'PPR_REC';
+              return item.properties.program_type === 'PPR_REC';
             },
           },
           'OLDERADULTCENTER': {
             unique_key: 'categoryType_OLDERADULTCENTER',
             i18n_key: 'categoryType.OLDERADULTCENTER',
             value: function(item) {
-              return item.properties.PROGRAM_TYPE === 'OLDER_ADULT_CENTER';
+              return item.properties.program_type === 'OLDER_ADULT_CENTER';
             },
           },
           'LIBRARY': {
             unique_key: 'categoryType_LIBRARY',
             i18n_key: 'categoryType.LIBRARY',
             value: function(item) {
-              return item.properties.PROGRAM_TYPE === 'LIBRARY';
+              return item.properties.program_type === 'LIBRARY';
             },
           },
           'OTHER': {
             unique_key: 'categoryType_OTHER',
             i18n_key: 'categoryType.OTHER',
             value: function(item) {
-              return item.properties.PROGRAM_TYPE === 'OTHER';
+              return item.properties.program_type === 'OTHER';
             },
           },
         },
@@ -169,7 +169,7 @@ let $config = {
             unique_key: 'internetServices_verizon',
             i18n_key: 'internetServices.verizon',
             value: function(item) {
-              return item.properties.VERIZON_INET_FIBER === 'Y';
+              return item.properties.verizon_inet_fiber === 'Y';
             },
           },
         },
@@ -181,7 +181,7 @@ let $config = {
             unique_key: 'computerServices_computersPublicAccess',
             i18n_key: 'computerServices.computersPublicAccess',
             value: function(item) {
-              return item.properties.AVAILABLE_COMPUTERS_TO_DISPLAY_ === 'Y';
+              return item.properties.available_computers_to_display === 'Y';
             },
           },
           // 'computersAfterschoolCamp': {
@@ -286,7 +286,7 @@ let $config = {
       'circle-radius': 7,
       'circle-color': [
         'match',
-        ['get', 'PROGRAM_TYPE_TO_DISPLAY'],
+        ['get', 'program_type_to_display'],
         'PPR Recreation Centers',
         '#506D0A',
         'Older Adult Centers',

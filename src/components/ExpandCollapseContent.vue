@@ -60,12 +60,12 @@ const internetServices = computed(() => {
   rows.push({
     id: 1,
     service: 'internetServices.verizon',
-    value: props.item.properties.VERIZON_INET_FIBER === 'Y',
+    value: props.item.properties.verizon_inet_fiber === 'Y',
   });
   rows.push({
     id: 1,
     service: 'computerServices.computersPublicAccess',
-    value: props.item.properties.AVAILABLE_COMPUTERS_TO_DISPLAY_ === 'Y',
+    value: props.item.properties.available_computers_to_display === 'Y',
   });
   // rows.push({
   //   id: 1,
@@ -96,22 +96,22 @@ const computerServices = computed(() => {
   rows.push({
     id: 1,
     service: 'computerServices.computersPublicAccess',
-    value: props.item.properties.COMPUTERS_PUBLIC_ACCESS_Y_N === 'Y',
+    value: props.item.properties.computers_public_access_y_n === 'Y',
   });
   rows.push({
     id: 1,
     service: 'computerServices.computersAfterschoolCamp',
-    value: props.item.properties.COMPUTERS_AFTERSCHOOL_CAMP_Y_N === 'Y',
+    value: props.item.properties.computers_afterschool_camp_y_n === 'Y',
   });
   rows.push({
     id: 1,
     service: 'computerServices.additionalComputerClasses',
-    value: props.item.properties.ADDITIONAL_COMPUTER_CLASSES_Y_N === 'Y',
+    value: props.item.properties.additional_computer_classes_y_n === 'Y',
   });
   rows.push({
     id: 1,
     service: 'computerServices.esports',
-    value: props.item.properties.ESPORTS === 'Y',
+    value: props.item.properties.esports === 'Y',
   });
   return { columns, rows };
 });
@@ -137,12 +137,12 @@ const otherServices = computed(() => {
   rows.push({
     id: 1,
     service: 'otherServices.generalAfterschoolCamp',
-    value: props.item.properties.GENERAL_AFTERSCHOOL_CAMP === 'Y',
+    value: props.item.properties.general_afterschool_camp === 'Y',
   });
   rows.push({
     id: 1,
     service: 'otherServices.gym',
-    value: props.item.properties.GYM === 'Y',
+    value: props.item.properties.gym === 'Y',
   });
   return { columns, rows };
 });
@@ -163,27 +163,27 @@ const otherServices = computed(() => {
     <div class="columns top-section">
       <div class="column is-6">
         <div
-          v-if="item.properties.STREET_ADDRESS"
+          v-if="item.properties.street_address"
           class="columns is-mobile"
         >
           <div class="column is-1">
             <font-awesome-icon icon="map-marker-alt" />
           </div>
           <div class="column is-11">
-            {{ item.properties.STREET_ADDRESS }}<br>
-            Philadelphia, PA {{ item.properties.ZIP }}<br>
+            {{ item.properties.street_address }}<br>
+            Philadelphia, PA {{ item.properties.zip }}<br>
           </div>
         </div>
 
         <div
-          v-if="item.properties.PHONE_NUMBER"
+          v-if="item.properties.phone_number"
           class="columns is-mobile"
         >
           <div class="column is-1">
             <font-awesome-icon icon="phone" />
           </div>
           <div class="column is-11">
-            {{ item.properties.PHONE_NUMBER }}
+            {{ item.properties.phone_number }}
           </div>
         </div>
 
@@ -192,19 +192,19 @@ const otherServices = computed(() => {
       <div class="column is-6">
 
         <div
-          v-if="item.properties.EMAIL"
+          v-if="item.properties.email"
           class="columns is-mobile website-div"
         >
           <div class="column is-1">
             <font-awesome-icon icon="envelope" />
           </div>
           <div class="column is-11">
-            <a :href="`mailto:${item.properties.EMAIL}`">{{ item.properties.EMAIL }}</a>
+            <a :href="`mailto:${item.properties.email}`">{{ item.properties.email }}</a>
           </div>
         </div>
 
         <div
-          v-if="item.properties.URL"
+          v-if="item.properties.url"
           class="columns is-mobile website-div"
         >
           <div class="column is-1">
@@ -213,9 +213,9 @@ const otherServices = computed(() => {
           <div class="column is-11">
             <a
               target="_blank"
-              :href="makeValidUrl(item.properties.URL_LINK)"
+              :href="makeValidUrl(item.properties.url_link)"
             >
-              {{ item.properties.URL }}
+              {{ item.properties.url }}
               <font-awesome-icon icon="external-link-alt" />
             </a>
           </div>
