@@ -25,6 +25,12 @@ const oldInfoMessage = computed(() => {
 //   return formattedAddress;
 // };
 
+const phoneNumber = (value) => {
+  var s2 = (""+value).replace(/\D/g, '');
+  var m = s2.match(/^(\d{3})(\d{3})(\d{4})$/);
+  return (!m) ? null : "(" + m[1] + ") " + m[2] + "-" + m[3];
+}
+
 const makeValidUrl = (url) => {
   let newUrl = window.decodeURIComponent(url);
   newUrl = newUrl
@@ -183,7 +189,7 @@ const otherServices = computed(() => {
             <font-awesome-icon icon="phone" />
           </div>
           <div class="column is-11">
-            {{ item.properties.phone_number }}
+            {{ phoneNumber(item.properties.phone_number) }}
           </div>
         </div>
 
