@@ -65,7 +65,7 @@ const internetServices = computed(() => {
   let rows = [];
   rows.push({
     id: 1,
-    service: 'internetServices.verizon',
+    service: 'services.verizon',
     value: props.item.properties.verizon_inet_fiber === 'Y',
   });
   rows.push({
@@ -75,7 +75,7 @@ const internetServices = computed(() => {
   });
   rows.push({
     id: 3,
-    service: 'computerServices.computersPublicAccess',
+    service: 'services.computersPublicAccess',
     value: props.item.properties.available_computers_to_display === 'Y',
   });
   return { columns, rows };

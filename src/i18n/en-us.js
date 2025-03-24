@@ -45,7 +45,7 @@ export default {
   },
   internetServices: {
     category: 'Internet Services',
-    verizon: 'Verizon Inet Fiber',
+    verizon: 'Verizon INET Fiber',
     meraki: 'Meraki Wifi',
   },
   computerServices: {

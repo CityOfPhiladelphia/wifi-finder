@@ -237,7 +237,7 @@ let $config = {
     enabled: false,
   },
   sections: {
-    'Recreation Centers':{
+    'PPR Recreation Centers':{
       title: 'PPRREC',
       titleSingular: 'PPRREC',
       color: '#506D0A',
@@ -259,7 +259,7 @@ let $config = {
     },
   },
   subsections: {
-    'Recreation Centers': 'Recreation Centers',
+    'PPR Recreation Centers': 'PPR Recreation Centers',
     'Older Adult Centers': 'Older Adult Centers',
     'Libraries': 'Libraries',
     'Other PPR Sites (I.e Museum, Education Centers, etc.)': 'Other PPR Sites',
