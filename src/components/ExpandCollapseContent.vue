@@ -3,8 +3,6 @@
 import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
 
-// import VerticalTable from './VerticalTable.vue';
-
 const props = defineProps({
   item: {
     type: Object,
@@ -13,17 +11,6 @@ const props = defineProps({
     },
   }
 });
-
-// computed
-const oldInfoMessage = computed(() => {
-  return t('oldInfoMessage');
-});
-
-// methods
-// const parseAddress = (address) => {
-//   const formattedAddress = address.replace(/(Phila.+)/g, city => `<div>${city}</div>`).replace(/^\d+\s[A-z]+\s[A-z]+/g, lineOne => `<div>${lineOne}</div>`).replace(/,/, '');
-//   return formattedAddress;
-// };
 
 const phoneNumber = (value) => {
   var s2 = (""+value).replace(/\D/g, '');
