@@ -39,13 +39,13 @@ export default {
   },
   services: {
     category: 'Services',
-    verizon: 'Verizon Franchise Location',
+    verizon: 'Verizon Franchise Agreement Location',
     wifi: 'Public Wi-Fi Available',
     computersPublicAccess: 'Computers Available',
   },
   internetServices: {
     category: 'Internet Services',
-    verizon: 'Verizon Franchise Location',
+    verizon: 'Verizon Franchise Agreement Location',
     meraki: 'Meraki Wifi',
   },
   computerServices: {
