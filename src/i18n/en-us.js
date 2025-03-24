@@ -40,7 +40,7 @@ export default {
   services: {
     category: 'Services',
     verizon: 'Verizon INET Fiber',
-    wifi: 'Public Wi-Fi Avavilable',
+    wifi: 'Public Wi-Fi Available',
     computersPublicAccess: 'Computer Services',
   },
   internetServices: {
