@@ -30,17 +30,18 @@ export default {
     p5: "The Service is a free public service provided by the City of Philadelphia. Your access to the Service is completely at the discretion of the City, and your access to the Service may be terminated at any time for any reason. You must accept this Agreement each time you use the Service and it is your responsibility to review it for any changes each time. This is an open wireless network.",
   },
   categoryType: {
-    category: 'Site type',
-    'PPRREC': 'PPR Recreation Center',
-    'PPR Recreation Center': 'PPR Recreation Center',
+    category: 'Location type',
+    'PPRREC': 'Recreation Center',
+    'PPR Recreation Center': 'Recreation Center',
     'OLDERADULTCENTER': 'Older Adult Center',
     'LIBRARY': 'Library',
     'OTHER': 'Other PPR Site',
   },
   services: {
     category: 'Services',
-    verizon: 'Verizon Inet Fiber',
-    computersPublicAccess: 'Computers - Public Access',
+    verizon: 'Verizon INET Fiber',
+    wifi: 'Public Wi-Fi Avavilable',
+    computersPublicAccess: 'Computer Services',
   },
   internetServices: {
     category: 'Internet Services',
@@ -49,7 +50,7 @@ export default {
   },
   computerServices: {
     category: 'Computer Services',
-    computersPublicAccess: 'Computers - Public Access',
+    computersPublicAccess: 'Computers Available',
     computersAfterschoolCamp: 'Computer Afterschool Camp',
     additionalComputerClasses: 'Additional Computer Classes',
     esports: 'Esports Machines',

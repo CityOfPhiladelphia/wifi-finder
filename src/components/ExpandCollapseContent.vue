@@ -69,15 +69,15 @@ const internetServices = computed(() => {
     value: props.item.properties.verizon_inet_fiber === 'Y',
   });
   rows.push({
-    id: 1,
+    id: 2,
+    service: 'services.wifi',
+    value: true,
+  });
+  rows.push({
+    id: 3,
     service: 'computerServices.computersPublicAccess',
     value: props.item.properties.available_computers_to_display === 'Y',
   });
-  // rows.push({
-  //   id: 1,
-  //   service: 'internetServices.meraki',
-  //   value: props.item.properties.MERAKI_WIFI === 'Y',
-  // });
   return { columns, rows };
 });
 

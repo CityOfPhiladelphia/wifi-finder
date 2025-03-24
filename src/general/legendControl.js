@@ -5,7 +5,7 @@ export default {
       shape: 'circle',
     },
     data: {
-      'PPR Recreation Centers': {
+      'Recreation Centers': {
         'border-color': 'black',
         'border-style': 'solid',
         'border-weight': '0px',
