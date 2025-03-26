@@ -231,7 +231,7 @@ let $config = {
     },
     {
       type: "native",
-      href: "https://www.phila.gov/wifi-finder/",
+      href: ".",
       text: "app.about",
     },
     {
