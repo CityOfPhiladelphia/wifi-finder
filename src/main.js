@@ -28,7 +28,7 @@ import '../node_modules/@phila/pinboard/dist/style.css';
 import wifi from './data-sources/wifi';
 
 import expandCollapseContent from './components/ExpandCollapseContent.vue';
-import customGreeting from './components/customGreeting.vue';
+import customGreeting from './components/CustomGreeting.vue';
 import customRouterLink from './components/CustomRouterLink.vue';
 const customComps = markRaw({
   'expandCollapseContent': expandCollapseContent,
