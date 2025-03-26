@@ -100,15 +100,31 @@ const allTwitter = computed(() => {
       id="main-area"
       class="main-area"
     >
+      <div class="exclamation-holder columns is-mobile">
+        <div class="column is-narrow">
+          <font-awesome-icon
+            icon="exclamation-triangle"
+            class="fa-3x"
+          />
+        </div>
+        <div class="column exclamation-details">
+          <div class="exclamation-message">{{ $t('checkSite') }}</div>
+        </div>
+      </div>
+
+      <h3>
+        {{ $t('introPage.section1Title') }}
+      </h3>
+
       <p v-html="$t('introPage.p0')" />
 
       <br>
 
-      <div class="half-data-section">
+      <div class="data-section">
         <p v-html="t('introPage.p2')" />
       </div>
 
-      <div class="half-data-section">
+      <div class="data-section">
         <ul class="bullet-list">
           <li
             v-for="(item, index) in $config.i18n.data.messages['en-US'].introPage.ul1"
@@ -137,17 +153,6 @@ const allTwitter = computed(() => {
         {{ $t('introPage.section2Title') }}
       </h3>
 
-      <div class="intro-list">
-        <ul>
-          <li
-            v-for="(item, index) in $config.i18n.data.messages['en-US'].introPage.ul2"
-            :key="index"
-            class="intro-list-item"
-            v-html="$t('introPage.ul2.' + index)"
-          />
-        </ul>
-      </div>
-
       <div>
         <p v-html="$t('introPage.p3')" />
       </div>
@@ -159,29 +164,26 @@ const allTwitter = computed(() => {
         <p v-html="$t('introPage.p4')" />
       </div>
 
-      <h3>
-        {{ $t('introPage.section4Title') }}
-      </h3>
-      <div>
-        <p v-html="$t('introPage.p5')" />
-      </div>
-      
-    </div> <!-- end of main-area -->
+    </div>
   </div>
 </template>
 
 <style>
 
-.nested-list {
-  margin-left: 1rem;
+.exclamation-details {
+  line-height: 3rem;
 }
 
-.nested-list ul {
-  list-style-type: circle;
+.exclamation-message {
+  height: 100%;
 }
 
 .intro-list-item {
   line-height: 1.5rem;
+}
+
+.data-section {
+  margin-bottom: 1rem;
 }
 
 </style>

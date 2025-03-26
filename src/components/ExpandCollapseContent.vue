@@ -201,13 +201,6 @@ const internetServices = computed(() => {
       </div>
     </div>
 
-    <!-- <vertical-table :data="
-      [
-        { label: 'Internet Speed', value: item.properties.CURRENT_INTERNET_SPEED_MBPS },
-        { label: 'Total Computers', value: item.properties.TOTAL_COMPUTERS },
-      ]"
-    /> -->
-
     <h3>{{ $t('services.category') }}</h3>
 
     <div class="table-intro">
