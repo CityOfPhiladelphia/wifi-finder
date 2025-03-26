@@ -10,10 +10,11 @@ export default {
   },
   checkSite: 'Before you go, contact the site to confirm their hours and what they offer.',
   service: "Service",
-  statusPage: "See the <a href='#' target='_blank'>total number of sites activated since October 2024</a> as part of the City's Verizon Franchise Agreement",
+  statusPage: "See the <a href='?services=internetServices_verizon'>total number of sites activated since October 2024</a> as part of the City's Verizon Franchise Agreement",
   introPage: {
     section1Title: "Find free City Wi-Fi",
-    p0: "The City offers free Wi-Fi at many recreation centers, older adult centers, parks, and libraries. Over 180 locations are part of an agreement between the City and Verizon to install high-speed broadband and public Wi-Fi for residents over two years. See the <a href='#' target='_blank'>total number of Verizon INET sites activated</a> since October 2024.",
+    p0: "The City offers free Wi-Fi at many recreation centers, older adult centers, parks, and libraries.",
+    p1: "Over 180 locations are part of an agreement between the City and Verizon to install high-speed broadband and public Wi-Fi for residents over two years. See the <a href='#' target='_blank'>total number of Verizon INET sites activated</a> since October 2024.",
     p2: "To find a free Wi-Fi location:",
     ul1: {
       li: "Filter by the services you need.",
