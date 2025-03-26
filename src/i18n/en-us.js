@@ -46,7 +46,7 @@ export default {
   services: {
     category: 'Services',
     verizon: 'Verizon franchise agreement location',
-    wifi: 'Public Wi-Fi Available',
+    wifi: 'Public Wi-Fi available',
     computersPublicAccess: 'Computers available',
   },
   internetServices: {
