@@ -1,6 +1,7 @@
 <script setup>
 
 import $config from '../main.js';
+import CustomRouterLink from './CustomRouterLink.vue';
 
 import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
@@ -116,7 +117,11 @@ const allTwitter = computed(() => {
         {{ $t('introPage.section1Title') }}
       </h3>
 
-      <p v-html="$t('introPage.p0')" />
+      <!-- <p v-html="$t('introPage.p0')" /> -->
+      <p>
+        {{ $t('introPage.p0') }}
+        <CustomRouterLink></CustomRouterLink>.
+      </p>
 
       <br>
 

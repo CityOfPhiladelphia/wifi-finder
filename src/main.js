@@ -18,20 +18,22 @@ import { faCarBus } from '@fortawesome/pro-solid-svg-icons/faCarBus';
 library.add(faExclamationTriangle, farAngleDown, farAngleUp, farTimes, farPlus, farMinus, faCheck, faCarBus);
 
 // use these if running off unlinked package
-import pinboard from '@phila/pinboard';
-import '../node_modules/@phila/pinboard/dist/style.css';
+// import pinboard from '@phila/pinboard';
+// import '../node_modules/@phila/pinboard/dist/style.css';
 // OR
 // use this if running off linked package
-// import pinboard from '../node_modules/@phila/pinboard/src/main.js';
+import pinboard from '../node_modules/@phila/pinboard/src/main.js';
 
 // data-sources
 import wifi from './data-sources/wifi';
 
 import expandCollapseContent from './components/ExpandCollapseContent.vue';
 import customGreeting from './components/customGreeting.vue';
+import customRouterLink from './components/CustomRouterLink.vue';
 const customComps = markRaw({
   'expandCollapseContent': expandCollapseContent,
   'customGreeting': customGreeting,
+  'customRouterLink': customRouterLink,
 });
 
 import legendControl from './general/legendControl';
@@ -53,13 +55,11 @@ let $config = {
     section: 'program_type_to_display',
     subsection: 'program_type_to_display',
   },
+  refineEnabled: false,
   agoTokenNeeded: true,
   allowZipcodeSearch: true,
   allowPrint: true,
-  showBuffers: true,
-  resetDataOnGeocode: true,
   retractableRefine: false,
-  dropdownRefine: false,
   searchBar: {
     searchTypes: [
       'address',
