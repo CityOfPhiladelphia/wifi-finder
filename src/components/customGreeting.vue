@@ -117,11 +117,11 @@ const allTwitter = computed(() => {
         {{ $t('introPage.section1Title') }}
       </h3>
 
-      <!-- <p v-html="$t('introPage.p0')" /> -->
-      <p>
+      <p v-html="$t('introPage.p0')" />
+      <!-- <p>
         {{ $t('introPage.p0') }}
         <CustomRouterLink></CustomRouterLink>.
-      </p>
+      </p> -->
 
       <br>
 
