@@ -5,7 +5,7 @@ export default {
       shape: 'circle',
     },
     data: {
-      'Recreation Centers': {
+      'Recreation centers': {
         'border-color': 'black',
         'border-style': 'solid',
         'border-weight': '0px',
@@ -14,7 +14,7 @@ export default {
         'font-size': '12px',
         'background-color': '#506D0A',
       },
-      'Older Adult Centers': {
+      'Older adult centers': {
         'border-color': 'black',
         'border-style': 'solid',
         'border-weight': '0px',
@@ -32,7 +32,7 @@ export default {
         'font-size': '12px',
         'background-color': '#0F4D90',
       },
-      'Other Site': {
+      'Other sites': {
         'border-color': 'black',
         'border-style': 'solid',
         'border-weight': '0px',
