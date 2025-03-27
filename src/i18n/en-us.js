@@ -29,12 +29,17 @@ export default {
     // },
     p3: "Some locations have computers available for public use. Computers may only be available for specific programs or at specific times.",
     // p3: "Many of these locations also offer access to computers for residents. Some locations offer regular hours where any resident can use a computer during open access hours. Other locations offer digital skills workshops and classes at scheduled times to help residents learn how to navigate the web or use a computer. Some locations only offer computer access to specific programs run by those locations, such as for afterschool students, at this time. Contact the site directly for information about what each site offers.",
-    section3Title: "Disclaimer",
-    p4: "Wi-Fi access at all locations is limited to legal uses and may have some restrictions. You must consent to a policy statement to log on to use Free Library of Philadelphia’s Wi-Fi or the City Wi-Fi at Parks and Recreation locations.",
+    
+    section3Title: "Learn more",
+    p4: "Explore <a href='https://www.phila.gov/services/education-learning/get-help-with-technology/find-free-city-wi-fi/' target='_blank'>how to log on to free public Wi-Fi</a> in Philadelphia.",
+    
+    section4Title: "Disclaimer",
+    p5: "Wi-Fi access at all locations is limited to legal uses and may have some restrictions. You must consent to a policy statement to log on to use Free Library of Philadelphia’s Wi-Fi or the City Wi-Fi at Parks and Recreation locations.",
     // p4: "We collect some information about you and your devices for the purpose of optimizing the Wi-Fi network functionality. By using the City of Philadelphia's Free Wi-Fi, you consent to the practices described in this privacy policy. If, for any reason, you do not consent to these practices, please do not use the City's Free Wi-Fi services. For more details about our Privacy Policy, feel free to reach out to us.",
     // section4Title: "Terms & Conditions",
     // p5: "The Service is a free public service provided by the City of Philadelphia. Your access to the Service is completely at the discretion of the City, and your access to the Service may be terminated at any time for any reason. You must accept this Agreement each time you use the Service and it is your responsibility to review it for any changes each time. This is an open wireless network.",
   },
+  verizonLogon: `To access the City's free public Wi-Fi, select "<b>OCF Guest</b>" from your phone or laptop's Wi-Fi network settings.`,
   categoryType: {
     category: 'Location type',
     'PPRREC': 'Recreation center',
