@@ -1,10 +1,9 @@
 export default {
   id: 'wifi',
   type: 'http-get',
-  dependent: 'agoToken',
+  // dependent: 'agoToken',
   resettable: false,
   url: 'https://services.arcgis.com/fLeGjb7u4uXqeF9q/arcgis/rest/services/free_city_wifi_locations/FeatureServer/0/query',
-  // url: 'https://services.arcgis.com/fLeGjb7u4uXqeF9q/arcgis/rest/services/fiber_sites_census_data_250224/FeatureServer/0/query',
   options: {
     params: {
       where: '1=1',

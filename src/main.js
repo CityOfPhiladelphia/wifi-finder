@@ -56,7 +56,7 @@ let $config = {
     subsection: 'program_type_to_display',
   },
   refineEnabled: false,
-  agoTokenNeeded: true,
+  // agoTokenNeeded: false,
   allowZipcodeSearch: true,
   allowPrint: true,
   retractableRefine: false,
