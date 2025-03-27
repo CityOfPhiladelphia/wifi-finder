@@ -194,19 +194,23 @@ const internetServices = computed(() => {
           </div>
         </div>
 
-
         <div class="columns is-mobile">
         </div>
 
       </div>
     </div>
 
-    <h3>{{ $t('services.category') }}</h3>
+    <div v-if="item.properties.verizon_inet_fiber === 'Y'">
+      <h3>{{ $t('services.verizon') }}</h3>
+      <div 
+        class="table-intro"
+        v-html="$t('verizonLogon')"
+      />
+    </div>
 
+    <h3>{{ $t('services.category') }}</h3>
     <div class="table-intro">
-      <div class="table-intro">
-        {{ $t('cards.tableServicesIntro') }}
-      </div>
+      {{ $t('cards.tableServicesIntro') }}
     </div>
 
     <vue-good-table
