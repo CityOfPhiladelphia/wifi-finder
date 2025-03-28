@@ -1,7 +1,7 @@
 export default {
   language: 'English',
   app: {
-    title: "City Wi-Fi Finder",
+    title: "Philly Free Wi-Fi Finder",
     subtitle: "Free Wi-Fi and computer services in Philadelphia",
     noResults: "We're sorry, there are no results for that search. Adjust the filters you've selected and try again.",
     // searchPlaceholders: {
