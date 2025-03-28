@@ -101,14 +101,14 @@ const allTwitter = computed(() => {
       id="main-area"
       class="main-area"
     >
-      <div class="exclamation-holder columns is-mobile">
+      <div class="exclamation-holder columns is-vcentered is-mobile">
         <div class="column is-narrow">
           <font-awesome-icon
             icon="exclamation-triangle"
             class="fa-3x"
           />
         </div>
-        <div class="column exclamation-details">
+        <div class="column">
           <div class="exclamation-message">{{ $t('checkSite') }}</div>
         </div>
       </div>
@@ -181,10 +181,6 @@ const allTwitter = computed(() => {
 </template>
 
 <style>
-
-.exclamation-details {
-  line-height: 3rem;
-}
 
 .exclamation-message {
   height: 100%;
