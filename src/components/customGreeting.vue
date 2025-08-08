@@ -132,7 +132,7 @@ const allTwitter = computed(() => {
       <div class="data-section">
         <ul class="bullet-list">
           <li
-            v-for="(item, index) in $config.i18n.data.messages['en-US'].introPage.ul1"
+            v-for="(item, index) in $config.i18n.data.messages['en'].introPage.ul1"
             :key="index"
           >
             {{ t('introPage.ul1.' + index) }}
