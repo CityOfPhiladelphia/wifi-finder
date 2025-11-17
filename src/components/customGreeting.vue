@@ -1,6 +1,7 @@
 <script setup>
 
-import $config from '../main.js';
+import { useConfigStore } from '@pinboard';
+const $config = useConfigStore().config;
 import CustomRouterLink from './CustomRouterLink.vue';
 
 import { useI18n } from 'vue-i18n';
