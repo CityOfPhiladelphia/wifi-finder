@@ -17,12 +17,8 @@ import { faCarBus } from '@fortawesome/pro-solid-svg-icons/faCarBus';
 
 library.add(faExclamationTriangle, farAngleDown, farAngleUp, farTimes, farPlus, farMinus, faCheck, faCarBus);
 
-// use these if running off unlinked package
-import pinboard from '@phila/pinboard';
 import '../node_modules/@phila/pinboard/dist/index.css';
-// OR
-// use this if running off linked package
-// import pinboard from '../node_modules/@phila/pinboard/src/main.js';
+import pinboard from '@pinboard';
 
 // data-sources
 import wifi from './data-sources/wifi';
