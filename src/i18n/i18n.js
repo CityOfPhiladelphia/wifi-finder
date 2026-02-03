@@ -1,10 +1,13 @@
 
-import en from './en-us';
-import es from './es-la';
-import ch from './zh-cn';
-import vi from './vi-vi';
-import ru from './ru-ru';
-import fr from './fr-fr';
+import en from './en';
+import ar from './ar';
+import ch from './ch';
+import es from './es';
+import fr from './fr';
+import ht from './ht';
+import pt from './pt';
+import ru from './ru';
+import vi from './vi';
 
 let i18n = {
   i18n: {
@@ -14,29 +17,41 @@ let i18n = {
         title: 'English',
       },
       {
-        language: 'es',
-        title: 'Español',
+        language: 'ar',
+        title: 'العربية',
       },
       {
         language: 'ch',
         title: '中文',
       },
       {
-        language: 'vi',
-        title: 'Tiếng Việt',
+        language: 'es',
+        title: 'Español',
+      },
+      {
+        language: 'fr',
+        title: 'Français',
+      },
+      {
+        language: 'ht',
+        title: 'Kreyòl Ayisyen',
+      },
+      {
+        language: 'pt',
+        title: 'Português',
       },
       {
         language: 'ru',
         title: 'Русский',
       },
       {
-        language: 'fr',
-        title: 'Français'
+        language: 'vi',
+        title: 'Tiếng Việt',
       },
     ],
     header: 'inside',
     enabled: true,
-    selectorHidden: true,
+    selectorHidden: false,
     refinePanel: true,
     expandCollapseTitle: true,
     footer: true,
@@ -44,11 +59,14 @@ let i18n = {
       locale: 'en',
       messages: {
         en: en,
-        es: es,
+        ar: ar,
         ch: ch,
-        vi: vi,
-        ru: ru,
+        es: es,
         fr: fr,
+        ht: ht,
+        pt: pt,
+        ru: ru,
+        vi: vi,
       },
     },
   },
