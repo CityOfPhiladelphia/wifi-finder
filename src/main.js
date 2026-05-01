@@ -232,7 +232,7 @@ let $config = {
     },
     {
       type: "native",
-      href: "https://www.phila.gov/feedback/",
+      href: "https://phila.formstack.com/forms/philly_free_wi_fi_finder_feedback",
       attrs: {
         target: "_blank",
       },
